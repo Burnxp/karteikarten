@@ -31,6 +31,18 @@ body{
     font-size: 2rem;
 }
 
+.cardsLoad{
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    text-align: center; /* Zusätzliche Absicherung */
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+.cardsLoad h1{
+    width: 80vw;
+}
 
 
 .navContent{
@@ -118,11 +130,13 @@ button {
 }
 
 #cardList  li {
+    width: 70vw;
     font-size: 1rem;
-    margin: 0.2 auto;
+    margin: 0.01 auto;
     padding: 0.1rem;
     display: inline-block;
     flex-wrap: wrap;
+    border-radius: 0.3rem;
 }
 
 
