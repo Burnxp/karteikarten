@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100dvh;
+    gap: 3rem;
+}
+
+.card, .addCard{
+    width: 60vw;
+    height: 45vh;
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    text-align: center; /* Zusätzliche Absicherung */
+    flex-wrap: wrap;
+    margin: 1.5rem;
+    padding: 2rem;
+    gap: 1rem;
+    background-color: blanchedalmond;
+    box-shadow: rgb(124, 123, 123) 0.1rem 0.1rem 0.5rem 0.5rem;
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+
+
+
+.navContent{
+    background-color: rgb(223, 200, 165);
+    width: 80vw;
+    height: auto;
+    
+
+}
+
+.navi, a{
+    text-decoration: none;
+    list-style: none;
+}
+
+.navi{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    margin: auto;
+    
+    
+}
+
+li{
+    width: 10rem;
+    margin: 1rem;
+    display: block;
+    padding: .5rem;
+    border: 0.1rem solid black;
+    text-align: center;
+}
+
+textarea {
+    width: 20vw;
+    height: 20vh;
+
+    padding: 1rem;
+}
+
+button {
+    width: 30vw;
+    height: 5vh;
+}
+
+@media (max-width:  35rem){
+    body{
+        display: block;
+    }
+
+    .navContent{
+        width: 100vw;
+    }
+
+    ae{
+        width: 100vw
+    }
+
+    .navi{
+        height: auto;
+        width: 100vw;
+ 
+    }
+    .card{
+        
+        margin: 2.5rem auto;
+    }
+    #cardList, .addCard{
+        width: 80vw;
+        margin: 2rem auto;
+        height: auto;
+        
+    }
+    textarea{
+        width: 80vw;
+        height: 10vh;
+    }
+
+    #nextCard {
+        display: flex;
+        justify-content: center;
+        
+    }
+}
+
+#cardList  li {
+    font-size: 1rem;
+    margin: 0.2 auto;
+    padding: 0.1rem;
+    display: inline-block;
+    flex-wrap: wrap;
+}
+
+
+label {
+    display: block;
+    padding: .2rem;
+}
+
+.front{
+    font-size: 2rem;
+    transition: all 2s linear 0.1s ;
+    overflow: hidden;
+}
+
+.card:hover{
+    cursor: pointer;
+    background-color: bisque;
+    padding: 1rem;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karteikarten</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="render()">
+    <header></header>
+    <aside class="navContent">
+      <ul class="navi">
+        <li class="myCards"><a href="index.html">Home</a></li>
+        <li class="addCards"><a href="#">Add Cards</a></li>
+        <li class="help"><a href="#">Help</a></li>
+      </ul>
+    </aside><div class="content">
+    <div class="addCard">
+      <div class="cardCollection">
+        <h2 class="uebh2">Lade hier Karteikarten für HTML, CSS und JavaScript!</h2>
+        <p class="cardLoad">
+
+          <button class="HTML" onclick="htmlCardsLoad()">HTML-Karten</button>
+          <button class="cssCards" onclick="cssCardsLoad()">CSS-Karten</button>
+          <button class="JavaScript" onclick="jsCardsLoad()">JavaScript</button>
+
+        </p>
+        <p class="cardLoadContent"></p>
+      </div>
+      <div>
+      <label for="frage">Frage:</label>
+      <textarea name="frage" id="frage"></textarea></div>
+      <div>
+        <label for="antwort">Antwort:</label>
+        <textarea name="antwort" id="antwort"></textarea>                       
+
+      </div>
+      
+       <button  id="addCardSend" onclick="addNewCard()">Karte hinzufügen</button>
+    </div>
+    <label for="">Verzeichis:</label>
+    <div id="cardList"></div>
+  </div>
+    <script src="script.js"></script>
+  </body>
+</html>
