@@ -9,24 +9,43 @@
   <body >
     
     <aside class="navContent">
-      <ul class="navi">
+<!--       <ul class="navi">
         <li class="myCards"><a href="#">My Cards</a></li>
         <li class="addCards"><a href="addCards.html">Add Cards</a></li>
         <li class="help"><a href="#">Help</a></li>
-      </ul>
+      </ul> --> <h1 class="ueb">My Cards</h1> 
     </aside>
     <main>
       <div class="cardsLoad">
       <h1>Karten laden:</h1>
-      <p><button id="htmlButton">HTML Karten</button></p></header>
-      <p><button id="cssButton">CSS Karten</button></p></header>
-      <p><button id="jsButton">JavaScript Karten</button></p>
+      <button id="allButton">Alle Karten Laden</button>
+      <button id="htmlButton">HTML Karten</button>
+      <button id="cssButton">CSS Karten</button>
+      <button id="jsButton">JavaScript Karten</button>
+      <button id="badCards">Schwierige Karten</button>
     </div>
-      <div class="card"><h3 class="front"></h3></div>
-      <div id="nextCard"> <button id="nextCardButton">Nächste Karte</button>
+      <div class="card">
+        <div id="message" class="message">
+          Keine Karten geladen. Bitte wähle zuerst eine Karte!
       </div>
+        <h3 class="front"></h3>
+      </div>
+      <div id="nextCard">
+        <label for="badCard" id="spanBadCard">
+          <input type="checkbox" id="badCard"> Bad Card
+        </label>
+        <button id="nextCardButton">Nächste Karte</button>
+      </div>
+      
 
     </main>
+    
+    <details>
+      <summary>Info</summary>
+      Wähle Bad Cards aus, um die Karte extra zu speichern. Um sie öfter zu wiederholen.
+    </details>
+    
+    
 
     <script src="script.js"></script>
   </body>

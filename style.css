@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -13,6 +15,12 @@ body{
     gap: 3rem;
 }
 
+.ueb {
+    text-align: center;
+    font-size: 3rem;
+    color: #120b6e;
+}
+
 .card, .addCard{
     width: 60vw;
     height: 45vh;
@@ -21,7 +29,7 @@ body{
     align-items: center; /* Vertikale Zentrierung */
     text-align: center; /* Zusätzliche Absicherung */
     flex-wrap: wrap;
-    margin: 1.5rem;
+    margin: 1.5rem auto;
     padding: 2rem;
     gap: 1rem;
     background-color: blanchedalmond;
@@ -89,6 +97,17 @@ button {
     height: 5vh;
 }
 
+#spanBadCard{
+    width: 10rem;
+    border: .1rem, solid black;
+    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 @media (max-width:  35rem){
     body{
         display: block;
@@ -96,10 +115,6 @@ button {
 
     .navContent{
         width: 100vw;
-    }
-
-    ae{
-        width: 100vw
     }
 
     .navi{
@@ -149,10 +164,86 @@ label {
     font-size: 2rem;
     transition: all 2s linear 0.1s ;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
+    
 }
+
+.back{
+    font-size: 2rem;
+    transition: all 2s linear 0.1s ;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
+    
+}
+
 
 .card:hover{
     cursor: pointer;
     background-color: bisque;
     padding: 1rem;
+    transform: translateY(-.1rem);
+}
+
+#nextCard {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Abstand zwischen den Kindelementen */
+}
+
+
+#spanBadCard.hidden {
+    display: none; /* Überschreibt alle vorherigen display-Regeln */
+}
+
+
+input[type="checkbox"] {
+    width: 1rem;  /* Breite */
+    height: 1rem; /* Höhe */
+    border: 2px solid #333; /* Rand der Checkbox */
+    border-radius: 0.5rem; /* Ecken abrunden */
+    background-color: #f0f0f0; /* Hintergrundfarbe */
+    cursor: pointer; /* Zeigt, dass die Checkbox klickbar ist */
+    appearance: none; /* Entfernt das Standarddesign der Checkbox */
+    transition: background-color 0.3s ease; /* Sanfte Übergänge bei Farbänderungen */
+}
+
+/* Wenn die Checkbox angehakt ist */
+input[type="checkbox"]:checked {
+    background-color: #da2c2c; /* Hintergrundfarbe, wenn angehakt */
+    border-color: #8e5338; /* Randfarbe bei aktiviertem Zustand */
+}
+
+/* Wenn die Checkbox fokussiert wird */
+input[type="checkbox"]:focus {
+    outline: 2px solid #2196F3; /* Blauer Rand bei Fokussierung */
+}
+
+
+/* masseage falls keine Karten geladen sind */
+.message {
+    background-color: #f8d7da;
+    color: #8d1a26;
+    padding: 1rem;
+    border: 1px solid #f5c6cb;
+    border-radius: 0.25rem;
+    margin: 1rem 0;
+    display: none; /* Anfangs ausgeblendet */
+}
+
+/* Optional: Stil für die Animation */
+.message.show {
+    display: block;
+    animation: fadeInOut 7s forwards; /* Einfading + Ausblenden nach 3 Sekunden */
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
