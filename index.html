@@ -14,25 +14,26 @@
         <li class="addCards"><a href="addCards.html">Add Cards</a></li>
         <li class="help"><a href="#">Help</a></li>
       </ul> --> <h1 class="ueb">My Cards</h1> 
+      <hr>
     </aside>
-    <main><details open>
-      <summary><h1>Karten laden:</h1></summary>
+    <main>
+      <summary><h1>Lade-Karten:</h1></summary><details open><summary>Öffnen / Schließen</summary>
       <div class="cardsLoad">
       
       
-      <button id="allButton">Alle Karten Laden</button>
-      <button id="htmlButton">HTML Karten</button>
-      <button id="cssButton">CSS Karten</button>
-      <button id="jsButton">JavaScript Karten</button>
-      <button id="badCards">Schwierige Karten</button>
+      <button id="allButton" class="allCards">Lade alle Karten</button>
+      <button id="htmlButton"class="htmlCards">HTML Cards</button>
+      <button id="cssButton" class="cssCards">CSS Cards</button>
+      <button id="jsButton"  class="jsCards">JavaScript Cards</button>
+      <button id="badCards"  class="badCards">Bad Cards</button>
     
-    </div>
+    </div><hr>
   </details>
       <div class="card">
         <div id="message" class="message">
-          Keine Karten geladen. Bitte wähle zuerst eine Karte!
+          Keine gespeicherten Karten unter diesem Schlüssel gefunden. Bitte wähle andere Karten!
       </div>
-        <h3 class="front"></h3>
+        <p class="front"></p>
       </div>
       <div id="nextCard">
         <label for="badCard" id="spanBadCard">
@@ -41,16 +42,19 @@
         <button id="nextCardButton">Nächste Karte</button>
       </div>
       
-
+      <details>
+        <summary>Info</summary>
+        Wähle Bad Cards aus, um die Karte extra zu speichern. Um sie später, unter Karten laden: Bad Cards zu wiederholen.
+      </details>
     </main>
+    <hr>
+    <footer>
+      &copy; Karteikarten <a href="#">Impressum</a> <a href="#">Datenschutz</a><br>
+      Letzte Aktuallisierung: 20.12.2024
+    </footer>
     
-    <details>
-      <summary>Info</summary>
-      Wähle Bad Cards aus, um die Karte extra zu speichern. Um sie öfter zu wiederholen.
-    </details>
     
-    
-
-    <script src="script.js"></script>
+    <script type="module" src="cardData.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
