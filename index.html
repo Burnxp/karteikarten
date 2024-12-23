@@ -2,18 +2,21 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Karteikarten</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body >
     
     <aside class="navContent">
-<!--       <ul class="navi">
+<!--     <ul class="navi">
         <li class="myCards"><a href="#">My Cards</a></li>
         <li class="addCards"><a href="addCards.html">Add Cards</a></li>
         <li class="help"><a href="#">Help</a></li>
-      </ul> --> <h1 class="ueb">My Cards</h1> 
+      </ul> 
+       -->
+      <h1 class="ueb">My Cards</h1> 
       <hr>
     </aside>
     <main>
@@ -29,10 +32,11 @@
     
     </div><hr>
   </details>
-      <div class="card">
+      <div class="card"><p class="closeButton"></p>
         <div id="message" class="message">
           Keine gespeicherten Karten unter diesem Schlüssel gefunden. Bitte wähle andere Karten!
       </div>
+        
         <p class="front"></p>
       </div>
       <div id="nextCard">
@@ -49,7 +53,7 @@
     </main>
     <hr>
     <footer>
-      &copy; Karteikarten <a href="#">Impressum</a> <a href="#">Datenschutz</a><br>
+      &copy;2024 Bernd Schaller <a href="impressum.html">Impressum</a> <a href="datenschutz.html">Datenschutz</a><br>
       Letzte Aktuallisierung: 20.12.2024
     </footer>
     

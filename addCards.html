@@ -6,7 +6,7 @@
     <title>Karteikarten</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload="render()">
+  <body >
     <header></header>
     <aside class="navContent">
       <ul class="navi">
@@ -20,7 +20,7 @@
         <h4 class="uebh2">Lade hier Karteikarten für HTML, CSS und JavaScript!</h4>
         <p class="cardLoad">
 
-          <button class="htmlCards" onclick="htmlCardsLoad()">HTML-Karten</button>
+          <button class="htmlCards" onclick="loadLocalStorage()">HTML-Karten</button>
           <button class="cssCards" onclick="cssCardsLoad()">CSS-Karten</button>
           <button class="JavaScript" onclick="jsCardsLoad()">JavaScript</button>
           <button class="allCards" onclick="allCardsLoad()">Alle Karten</button>
@@ -42,6 +42,7 @@
     <label for="">Verzeichis:</label>
     <div id="cardList"></div>
   </div>
-    <script src="script.js"></script>
+  <script type="module" src="cardData.js"></script>
+  <script type="module" src="script.js"></script>
   </body>
 </html>

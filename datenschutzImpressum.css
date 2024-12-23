@@ -1,0 +1,30 @@
+body{
+    height: auto;
+    min-height: 100vh;
+}
+
+div {
+    width: 80vw;
+    padding: 2rem;
+    margin: 0 auto;
+
+}
+
+.myCards {
+    text-decoration: none;
+    font-family: 'Great Vibes';
+    font-size: 1.5rem;
+    font-weight: bold; /* Künstlich fett */
+    /* background-color: rgb(173, 216, 230); */
+    padding: 0.5rem;
+    margin: 0.1rem;
+    border: .1rem solid green;
+    border-radius: 2rem 0;
+    color: rgb(83, 77, 117);
+}
+
+.myCards:hover {
+    cursor: pointer;
+    
+}
+

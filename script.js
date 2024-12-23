@@ -1,4 +1,4 @@
-import { cssCards, htmlCards, jsCards } from './cardData.js';
+import { cssCards, htmlCards, jsCards, engGer } from './cardData.js';
 
 // load cards to localstorage
 
@@ -47,7 +47,7 @@ function badCardsLoad() {
 
 let cardStorage = JSON.parse(localStorage.getItem('cardStorage')) || {};/* localStorage - speichert die neuen Vokabeln 
 parse heißt Textumwandeln in das Format was ich brauche zwei striche heißen oder.. alternative!*/
-/* lehrnt eigenständig die neuen Vokabeln, Startpunkt ist {}*/
+/* lernt eigenständig die neuen Vokabeln, Startpunkt ist {}*/
 let randomNextCard; 
 
 
@@ -74,7 +74,7 @@ function render() {
     cardList.innerHTML = '';
 
     for (let key in cardStorage) { /* Ich greife auf die Objekte zu */
-        cardList.innerHTML += `<li>${key} - ${cardStorage[key]}</li>`;
+        cardList.innerHTML += `X <br><li>${key} - ${cardStorage[key]}</li>`;
     }
 
     
@@ -104,7 +104,8 @@ function nextCard(storageKey, frontSideSelector) {
     showNextCard(frontSideSelector);
 }
 let checked = false;
-document.getElementById('badCard').addEventListener('click', () => {
+if (document.getElementById('badCard')){
+    document.getElementById('badCard').addEventListener('click', () => {
     
     if (!checked){
 
@@ -112,10 +113,11 @@ document.getElementById('badCard').addEventListener('click', () => {
     } else {
     console.log('unchecked');
 }
+    
 checked = !checked
-}
+})};
 
-)
+
 function ifBadCard(storageKey){
         // wenn es badCards sind wird die Checkbox nicht angezeigt!
         if(storageKey === 'badCards'){
@@ -159,25 +161,35 @@ function showNextCard(frontSideSelector) {
   
 
     console.log("Zeige nächste Karte:", randomNextCard, currentCardStorage[randomNextCard]); // Debugging-Ausgabe
-    
+
+    const card = document.querySelector(".card");
+    // Hole den closeButton innerhalb der card
+    const closeButton = card.querySelector('.closeButton');
     // Aktualisiere die Vorderseite mit der nächsten Karte
-    frontSide.innerHTML = randomNextCard;
+    frontSide.innerHTML = '';
+    closeButton.innerHTML = 'x <br>';
+    frontSide.innerHTML += randomNextCard;
 
     // Erstelle das Kartenelement und handle Klicks
-    const card = document.querySelector(".card");
+    
     if (card) {
         let showAnswer = false; // Zustand Vorder- oder Rückseite
-        card.addEventListener("click", () => {
+        card.addEventListener("click", (evt) => {
+            // Sicherstellen, dass der Klick genau auf die Karte geht
+        if (evt.target === card || evt.target === frontSide) {  // Wenn das geklickte Element die Karte selbst ist
             if (showAnswer) {
-                frontSide.innerHTML = `${randomNextCard}`; // Frage anzeigen
+                frontSide.innerHTML = '';
+                frontSide.innerHTML += `${randomNextCard}`; // Frage anzeigen
             } else {
-                frontSide.innerHTML = `${currentCardStorage[randomNextCard]}`; // Antwort anzeigen
+                frontSide.innerHTML = '';
+                frontSide.innerHTML += `${currentCardStorage[randomNextCard]}`; // Antwort anzeigen
             }
             showAnswer = !showAnswer;
-        });
+        }});
     }
     console.log(cardQuest, cardAnswer)
 }
+
 
 let cardQuest = null;
 let cardAnswer = null;
@@ -195,6 +207,7 @@ function checkboxPrüfen(){
        }
 }
 
+if (document.getElementById("htmlButton")) {
 
 // Sicherstellen, dass die Daten korrekt aus dem LocalStorage geladen werden
 // Event-Listener für die Buttons hinzufügen
@@ -216,57 +229,65 @@ document.getElementById("htmlButton").addEventListener("click", () => {
     }
 });
 
-document.getElementById("cssButton").addEventListener("click", () => {
+}
+if (document.getElementById("cssButton")) {
+    document.getElementById("cssButton").addEventListener("click", () => {
     
-    let storedData = localStorage.getItem('cardStorageCSS');
-    console.log("CSS Button geklickt - storedData:", storedData); // Debugging-Ausgabe
-    if (storedData === null) {
-        cssCardsLoad(); // Diese Funktion wird nur aufgerufen, wenn kein Wert im localStorage vorhanden ist
-        storedData = localStorage.getItem('cardStorageCSS');
-    }
-    console.log(storedData);
+        let storedData = localStorage.getItem('cardStorageCSS');
+        console.log("CSS Button geklickt - storedData:", storedData); // Debugging-Ausgabe
+        if (storedData === null) {
+            cssCardsLoad(); // Diese Funktion wird nur aufgerufen, wenn kein Wert im localStorage vorhanden ist
+            storedData = localStorage.getItem('cardStorageCSS');
+        }
+        console.log(storedData);
+        
     
+        if (storedData) {
+            document.querySelector("#message").classList.remove("show");
+            colorChange('css');
+            nextCard('cardStorageCSS', ".front");
+        } else {
+            console.log("Keine gespeicherten CSS-Daten gefunden.");
+        }
+    });
+}
 
-    if (storedData) {
-        document.querySelector("#message").classList.remove("show");
-        colorChange('css');
-        nextCard('cardStorageCSS', ".front");
-    } else {
-        console.log("Keine gespeicherten CSS-Daten gefunden.");
-    }
-});
+if (document.getElementById("jsButton")){
+    document.getElementById("jsButton").addEventListener("click", () => {
+        let storedData = localStorage.getItem('cardStorageJS');
+        console.log("JS Button geklickt - storedData:", storedData); // Debugging-Ausgabe
+        if (storedData === null) {
+            jsCardsLoad(); // Diese Funktion wird nur aufgerufen, wenn kein Wert im localStorage vorhanden ist
+            storedData = localStorage.getItem('cardStorageJS');
+        }
+    
+        if (storedData) {
+            document.querySelector("#message").classList.remove("show");
+            colorChange('js');
+            nextCard('cardStorageJS', ".front");
+        } else {
+            console.log("Keine gespeicherten JS-Daten gefunden.");
+        }
+    });
+    
+}
 
-document.getElementById("jsButton").addEventListener("click", () => {
-    let storedData = localStorage.getItem('cardStorageJS');
-    console.log("JS Button geklickt - storedData:", storedData); // Debugging-Ausgabe
-    if (storedData === null) {
-        jsCardsLoad(); // Diese Funktion wird nur aufgerufen, wenn kein Wert im localStorage vorhanden ist
-        storedData = localStorage.getItem('cardStorageJS');
-    }
-
-    if (storedData) {
-        document.querySelector("#message").classList.remove("show");
-        colorChange('js');
-        nextCard('cardStorageJS', ".front");
-    } else {
-        console.log("Keine gespeicherten JS-Daten gefunden.");
-    }
-});
+if (document.getElementById("allButton")){
+    document.getElementById("allButton").addEventListener("click", () => {
+        allCardsLoad();
+        const storedData = localStorage.getItem('cardStorageAll');
+        console.log("JS Button geklickt - storedData:", storedData); // Debugging-Ausgabe
+    
+        if (storedData) {
+            document.querySelector("#message").classList.remove("show");
+            colorChange('allCards');
+            nextCard('cardStorageAll', ".front");
+        } else {
+            console.log("Keine gespeicherten JS-Daten gefunden.");
+        }
+    });
 
 
-document.getElementById("allButton").addEventListener("click", () => {
-    allCardsLoad();
-    const storedData = localStorage.getItem('cardStorageAll');
-    console.log("JS Button geklickt - storedData:", storedData); // Debugging-Ausgabe
-
-    if (storedData) {
-        document.querySelector("#message").classList.remove("show");
-        colorChange('allCards');
-        nextCard('cardStorageAll', ".front");
-    } else {
-        console.log("Keine gespeicherten JS-Daten gefunden.");
-    }
-});
 
 document.getElementById("badCards").addEventListener("click", () => {
   badCardsLoad();
@@ -311,7 +332,7 @@ document.getElementById("nextCardButton").addEventListener("click", () => {
     }, 10000); // 
   }
 });
-
+}
 function colorChange(cardType) {
     const cardElement = document.querySelector('.card');
 
@@ -337,16 +358,8 @@ function colorChange(cardType) {
     }
 }
 
-
-
-
-
-    
-
-
-    
-    
-    function badCardsSave(randomNextCard, cardValue) {
+  
+function badCardsSave(randomNextCard, cardValue) {
         console.log(randomNextCard, currentCardStorage[randomNextCard]);
         
         // Lade das bestehende Objekt aus dem localStorage oder initialisiere ein leeres Objekt
@@ -359,6 +372,72 @@ function colorChange(cardType) {
         localStorage.setItem('badCards', JSON.stringify(badCardObject));
     
         console.log(badCardObject); // Überprüfe die aktualisierte Struktur
-    }
+}
     
-  
+function loadLocalStorage(){
+    let htmlData = localStorage.getItem('cardStorageHTML');
+    let cardList = document.getElementById('cardList');
+    console.log(htmlData.length)
+    console.log(htmlData)
+    if (htmlData) {
+        try {
+            let jsonData = JSON.parse(htmlData);
+            //einzelne Werte durchgehen
+            Object.entries(jsonData).forEach(([key, value]) => {
+                console.log (`${key}: ${value}`)
+                
+                    cardList.innerHTML += `X <br><li>${key} - ${value}</li>`;
+                
+            
+            });
+        } catch (error){
+            console.error('fehler beim parsen von JSON', error)
+        }
+    } else {
+        console.log("Kein JSON-Datensatz im Local Storage gefunden.");
+    }
+}
+
+
+
+document.querySelector('.closeButton').addEventListener('click', () => {
+    elementKeyDelete(currentCardStorageKey, cardQuest);
+    
+
+}
+)
+
+function elementKeyDelete(key, value) {
+    // Den Wert aus localStorage holen
+    const dataKey = localStorage.getItem(key);
+    const confirmDelete = confirm(`Möchtest du den Wert "${value}" wirklich löschen?`);
+    // Existiert der Schlüssel?
+    if (confirmDelete) {
+        try {
+            // In ein Objekt umwandeln
+            let keyObject = JSON.parse(dataKey);
+            console.log("Vorher:", keyObject);
+
+            // Überprüfen, ob es ein Objekt ist
+            if (typeof keyObject === 'object' && keyObject !== null) {
+                // Entferne den spezifischen Schlüssel
+                console.log('vor dem löschen', keyObject, keyObject[value]);
+                delete keyObject[value];
+                console.log('nach dem löschen', keyObject[value]);
+                console.log("Nachher:", keyObject);
+
+                // Aktualisiertes Objekt zurückspeichern
+                localStorage.setItem(key, JSON.stringify(keyObject));
+
+                // nächste Karte laden
+                showNextCard(currentCardStorageKey, ".front");
+            } else {
+                console.error(`Der Wert von ${key} ist kein Objekt.`);
+            }
+        } catch (e) {
+            console.error("Fehler beim Parsen von JSON:", e);
+        }
+    } else {
+        console.warn(`Schlüssel ${key} existiert nicht.`);
+    }
+}

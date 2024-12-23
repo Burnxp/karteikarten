@@ -2,7 +2,7 @@
     box-sizing: border-box; 
     --bg-color: linear-gradient(to top, rgb(98, 223, 40), rgb(173, 216, 230)); /* Frisches Grün + LightBlue */ /* LightBlue + Gainsboro */;
     --button-img: linear-gradient(white, rgb(98, 223, 40));
-    --card-img: linear-gradient(white, blue);
+    --card-img: linear-gradient(white, rgb(229, 255, 0));
     --card-img-css: linear-gradient(white, rgb(173, 216, 230)); /* LightBlue */;
     --card-img-js:linear-gradient(white, rgb(255, 239, 186)); /* PaleYellow */;
     --card-img-allCards: linear-gradient(to right, #ff7e5f, #feb47b); /* Orange und Pink */
@@ -37,7 +37,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100dvh;
+    height: auto;
+    min-height: 100vh;
     
     gap: 3rem;
 }
@@ -153,6 +154,7 @@ button {
         display: block;
         margin: 0;
         padding: 0;
+        
     }
     main{
         padding: 1rem;
@@ -301,4 +303,19 @@ input[type="checkbox"]:focus {
 
 hr{
     width: 100%;
+}
+
+
+
+.closeButton {
+    color: red;
+    text-align: right;
+    cursor: pointer;
+    align-self: flex-start;
+    order: 1;
+    font-size: 20px;
+}
+
+.closeButton:hover {
+    color: darkred;
 }
