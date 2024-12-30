@@ -1,4 +1,4 @@
-# Karteikarten zum üben. 
+# Karteikarten zum Üben. 
 Für HTML, CSS und Javascript
 
 Einfach Karten laden und loslegen!
