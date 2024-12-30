@@ -1,86 +1,10 @@
-import { cssCards, htmlCards, jsCards, engGer } from './cardData.js';
-
-// load cards to localstorage
-
-function cssCardsLoad(){
-    cssCards;
-      
-    localStorage.setItem(`cardStorageCSS`, JSON.stringify(cssCards));
-/*         const cardLoadContent = document.querySelector('.cardLoadContent');
-      cardLoadContent.innerHTML = ` <h4>Laden der CSS-Daten abgeschlossen</h4>
-      Es wurden CSS Karteikarten in den Localstorage geladen!`; */
-
-      console.log('cssCardsLoad wurder erfolgreich abgeschlossen!')
-}
-
-function htmlCardsLoad(){
-      htmlCards;
-      console.log(htmlCards)
-      localStorage.setItem(`cardStorageHTML`, JSON.stringify(htmlCards));
-/*           const cardLoadContent = document.querySelector('.cardLoadContent');
-      cardLoadContent.innerHTML = ` <h4>Laden der HTML-Daten abgeschlossen</h4>
-      Es wurden HTML Karteikarten in den Localstorage geladen!`; */
-}
-
-function jsCardsLoad(){
-
-    jsCards;
-    /* const cardLoadContent = document.querySelector('.cardLoadContent'); */
-    localStorage.setItem(`cardStorageJS`, JSON.stringify(jsCards)); 
-    /* cardLoadContent.innerHTML = ` <h4>Laden der HTML-Daten abgeschlossen</h4>
-    Es wurden JavaScript Karteikarten in den Localstorage geladen!`; */
-}
-
-function allCardsLoad(){
-    let allCards = ({...cssCards, ...jsCards, ...htmlCards});// Spread-Operator 
-    console.log(allCards)
-    localStorage.setItem(`cardStorageAll`, JSON.stringify(allCards));
-    
-}
-
-function badCardsLoad() {
-    const badCardsList = JSON.parse(localStorage.getItem('badCards')) || [];
-    console.log(badCardsList)
-    
-}
 
 
-let cardStorage = JSON.parse(localStorage.getItem('cardStorage')) || {};/* localStorage - speichert die neuen Vokabeln 
-parse heißt Textumwandeln in das Format was ich brauche zwei striche heißen oder.. alternative!*/
-/* lernt eigenständig die neuen Vokabeln, Startpunkt ist {}*/
+
 let randomNextCard; 
 
-
+if (document.querySelector(`.front`)){
 const frontSide = document.querySelector('.front');
-
-
-
-
-function addNewCard() {
-    cardStorage[frage.value] = antwort.value; /* germanText.value = es wird auf das treffende Wort zugegriffen */
-
-    frage.value = '';
-    antwort.value = '';
-    console.log(cardStorage)
-    localStorage.setItem(`cardStorage`, JSON.stringify(cardStorage));
-    console.log(`cardStorage`, JSON.stringify(cardStorage))
-    render();
-   
-
-    
-}
-
-function render() {
-    cardList.innerHTML = '';
-
-    for (let key in cardStorage) { /* Ich greife auf die Objekte zu */
-        cardList.innerHTML += `X <br><li>${key} - ${cardStorage[key]}</li>`;
-    }
-
-    
-}
-
-
 
 let currentCardStorageKey = '';  // Variable für den aktuellen StorageKey
 let currentCardStorage = {};     // Objekt, das die geladenen Daten enthält
@@ -133,7 +57,11 @@ function ifBadCard(storageKey){
         }
 
 }
-
+function badCardsLoad() {
+    const badCardsList = JSON.parse(localStorage.getItem('badCards')) || [];
+    console.log(badCardsList)
+    
+}
 
 // Funktion zum Zeigen der nächsten Karte
 function showNextCard(frontSideSelector) {
@@ -230,86 +158,10 @@ document.getElementById("htmlButton").addEventListener("click", () => {
 });
 
 }
-if (document.getElementById("cssButton")) {
-    document.getElementById("cssButton").addEventListener("click", () => {
-    
-        let storedData = localStorage.getItem('cardStorageCSS');
-        console.log("CSS Button geklickt - storedData:", storedData); // Debugging-Ausgabe
-        if (storedData === null) {
-            cssCardsLoad(); // Diese Funktion wird nur aufgerufen, wenn kein Wert im localStorage vorhanden ist
-            storedData = localStorage.getItem('cardStorageCSS');
-        }
-        console.log(storedData);
-        
-    
-        if (storedData) {
-            document.querySelector("#message").classList.remove("show");
-            colorChange('css');
-            nextCard('cardStorageCSS', ".front");
-        } else {
-            console.log("Keine gespeicherten CSS-Daten gefunden.");
-        }
-    });
-}
-
-if (document.getElementById("jsButton")){
-    document.getElementById("jsButton").addEventListener("click", () => {
-        let storedData = localStorage.getItem('cardStorageJS');
-        console.log("JS Button geklickt - storedData:", storedData); // Debugging-Ausgabe
-        if (storedData === null) {
-            jsCardsLoad(); // Diese Funktion wird nur aufgerufen, wenn kein Wert im localStorage vorhanden ist
-            storedData = localStorage.getItem('cardStorageJS');
-        }
-    
-        if (storedData) {
-            document.querySelector("#message").classList.remove("show");
-            colorChange('js');
-            nextCard('cardStorageJS', ".front");
-        } else {
-            console.log("Keine gespeicherten JS-Daten gefunden.");
-        }
-    });
-    
-}
-
-if (document.getElementById("allButton")){
-    document.getElementById("allButton").addEventListener("click", () => {
-        allCardsLoad();
-        const storedData = localStorage.getItem('cardStorageAll');
-        console.log("JS Button geklickt - storedData:", storedData); // Debugging-Ausgabe
-    
-        if (storedData) {
-            document.querySelector("#message").classList.remove("show");
-            colorChange('allCards');
-            nextCard('cardStorageAll', ".front");
-        } else {
-            console.log("Keine gespeicherten JS-Daten gefunden.");
-        }
-    });
+let cardStorage = JSON.parse(localStorage.getItem(`cardStorage`)) || {};
 
 
 
-document.getElementById("badCards").addEventListener("click", () => {
-  badCardsLoad();
-  const storedData = localStorage.getItem("badCards");
-  console.log("badCards Button geklickt - storedData:", storedData); // Debugging-Ausgabe
-
-  if (storedData) {
-
-    colorChange('badCards');
-    nextCard("badCards", ".front");
-  } else {
-    console.log("Keine gespeicherten badCards-Daten gefunden.");
-    document.querySelector('.front').innerHTML = '';
-    document.querySelector("#message").classList.add("show");
-
-
-    // Verstecke die Nachricht nach 3 Sekunden
-    setTimeout(function () {
-      document.querySelector("#message").classList.remove("show");
-    }, 7000); // 3000ms = 3 Sekunden
-  }
-});
 // Event-Listener für den Button "Nächste Karte"
 document.getElementById("nextCardButton").addEventListener("click", () => {
   console.log("Nächste Karte Button geklickt"); // Debugging-Ausgabe
@@ -332,7 +184,7 @@ document.getElementById("nextCardButton").addEventListener("click", () => {
     }, 10000); // 
   }
 });
-}
+
 function colorChange(cardType) {
     const cardElement = document.querySelector('.card');
 
@@ -369,7 +221,7 @@ function badCardsSave(randomNextCard, cardValue) {
         badCardObject[randomNextCard] = cardValue;
     
         // Speichere das aktualisierte Objekt zurück in den localStorage
-        localStorage.setItem('badCards', JSON.stringify(badCardObject));
+        localStorage.setItem('cardStorageBADCARDS', JSON.stringify(badCardObject));
     
         console.log(badCardObject); // Überprüfe die aktualisierte Struktur
 }
@@ -441,3 +293,44 @@ function elementKeyDelete(key, value) {
         console.warn(`Schlüssel ${key} existiert nicht.`);
     }
 }
+
+
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i); // Hole den Schlüssel
+    if (key.startsWith("cardStorage")) { // Prüfe, ob der Schlüssel mit "cardStorage" beginnt
+        console.log(key); // Gib den Schlüssel aus
+        let cardsLoad = document.querySelector('.cardsLoad');
+        const keySuffix = key.replace("cardStorage", ""); // Entferne den Präfix
+        
+        // Füge den Button ein, ohne bestehende Elemente zu ersetzen
+        cardsLoad.insertAdjacentHTML('beforeend', `<button id='${key}'>${keySuffix}</button>`);
+        
+        // Füge den Click-Listener hinzu
+        clickHinzufuegen(key);
+    }
+}
+
+function clickHinzufuegen(key) {
+    document.getElementById(key).addEventListener('click', () => {
+        console.log('klick');
+        let storedData = localStorage.getItem(key);
+
+        console.log(key + " geklickt - storedData:", storedData); // Debugging-Ausgabe
+
+        if (storedData) {
+            document.querySelector("#message").classList.remove("show");
+            colorChange(key);
+            nextCard(key, ".front");  // rufe nextCard mit dem richtigen Schlüssel auf
+        } else {
+            console.log("Keine gespeicherten HTML-Daten gefunden.");
+        }
+    });
+}
+
+}
+
+
+// button mit badCards erstellen falls noch keine badcards vorhanden sind
+console.log('hallo-welt')
+
+console.log(document.getElementById('addCardSend'));

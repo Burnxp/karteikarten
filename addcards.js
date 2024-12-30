@@ -1,5 +1,5 @@
 //cards Objecte
-export let jsCards = {
+let jsCards = {
     "console.log()": "Gibt eine Nachricht oder einen Wert in der Browser-Konsole aus",
     "alert()": "Zeigt ein Pop-up-Dialogfeld mit einer Nachricht an",
     "prompt()": "Öffnet ein Eingabefeld und gibt die eingegebene Zeichenfolge zurück",
@@ -75,7 +75,7 @@ export let jsCards = {
     "parseInt()": "Konvertiert eine Zeichenfolge in eine ganze Zahl",
     "parseFloat()": "Konvertiert eine Zeichenfolge in eine Gleitkommazahl"
   };
-  export let htmlCards = {
+  let htmlCards = {
     "id": "Eindeutige Identifikation für ein HTML-Element, um es gezielt anzusprechen",
     "class": "Eine oder mehrere Klassen für CSS-Styling oder JavaScript-Zugriffe",
     "style": "Inline-CSS, um das Styling eines Elements direkt zu definieren",
@@ -85,9 +85,9 @@ export let jsCards = {
     "href": "Ziel-URL für Links oder Ressourcen",
     "target": "Bestimmt, wie ein Link geöffnet wird (z.B. _blank für neues Fenster)",
     "rel": "Beziehung zwischen der aktuellen Seite und der verlinkten Ressource",
-    "type": "Typ der Ressource, z.B. für `<link>` oder `<script>`",
+    "type": "Typ der Ressource, z.B. für '<link>' oder '<script>'",
     "name": "Name eines Elements, z.B. für Formularfelder",
-    "value": "Wert eines Elements, z.B. bei Formularfeldern oder `<input>`",
+    "value": "Wert eines Elements, z.B. bei Formularfeldern oder '<input>'",
     "placeholder": "Anzeigetext in einem leeren Formularfeld",
     "required": "Gibt an, ob ein Eingabefeld ausgefüllt sein muss",
     "disabled": "Deaktiviert ein Formularfeld oder Element",
@@ -98,7 +98,7 @@ export let jsCards = {
     "pattern": "Definiert ein reguläres Ausdrucksmuster für Eingabewerte",
     "autofocus": "Setzt den Fokus automatisch auf ein Eingabefeld, wenn die Seite geladen wird",
     "autocomplete": "Steuert die automatische Vervollständigung von Eingaben",
-    "multiple": "Erlaubt die Auswahl mehrerer Werte (z.B. für `<select>` oder `<input>`)",
+    "multiple": "Erlaubt die Auswahl mehrerer Werte (z.B. für '<select>' oder '<input>')",
     "size": "Anzahl der sichtbaren Optionen in einem Dropdown-Menü",
     "step": "Legt die Inkremente für Zahlen- oder Datumsfelder fest",
     "min": "Minimal erlaubter Wert für ein Eingabefeld",
@@ -108,13 +108,13 @@ export let jsCards = {
     "action": "URL, an die ein Formular gesendet wird",
     "enctype": "Codierungstyp des Formularinhalts (z.B. multipart/form-data für Datei-Uploads)",
     "novalidate": "Deaktiviert die HTML-Standardformularvalidierung",
-    "cols": "Anzahl der sichtbaren Spalten in einem `<textarea>`",
-    "rows": "Anzahl der sichtbaren Zeilen in einem `<textarea>`",
-    "wrap": "Steuert den Textumbruch in einem `<textarea>` (z.B. hard oder soft)",
+    "cols": "Anzahl der sichtbaren Spalten in einem '<textarea>'",
+    "rows": "Anzahl der sichtbaren Zeilen in einem '<textarea>'",
+    "wrap": "Steuert den Textumbruch in einem '<textarea>' (z.B. hard oder soft)",
     "lang": "Sprache des Inhalts im Element",
     "dir": "Textausrichtung (z.B. ltr für links-nach-rechts oder rtl für rechts-nach-links)",
     "hidden": "Verbirgt ein Element vor der Anzeige",
-    "data-*": "Benutzerdefinierte Datenattribute für Entwickler (z.B. `data-id`, `data-role`)",
+    "data-*": "Benutzerdefinierte Datenattribute für Entwickler (z.B. 'data-id', 'data-role')",
     "contenteditable": "Erlaubt die Bearbeitung des Inhalts eines Elements",
     "draggable": "Macht ein Element per Drag-and-Drop verschiebbar",
     "spellcheck": "Aktiviert oder deaktiviert die Rechtschreibprüfung für ein Element",
@@ -123,13 +123,13 @@ export let jsCards = {
     "aria-label": "Beschriftung eines Elements für Screenreader",
     "aria-hidden": "Gibt an, ob ein Element für Screenreader verborgen ist",
     "loading": "Gibt an, wie Ressourcen (z.B. Bilder) geladen werden sollen (lazy oder eager)",
-    "async": "Gibt an, ob ein `<script>` asynchron geladen werden soll",
-    "defer": "Gibt an, ob ein `<script>` verzögert ausgeführt werden soll",
-    "sandbox": "Einschränkungen für eingebettete `<iframe>`-Inhalte",
-    "allow": "Definiert Berechtigungen für eingebettete `<iframe>`-Inhalte",
+    "async": "Gibt an, ob ein '<script>' asynchron geladen werden soll",
+    "defer": "Gibt an, ob ein '<script>' verzögert ausgeführt werden soll",
+    "sandbox": "Einschränkungen für eingebettete '<iframe>'-Inhalte",
+    "allow": "Definiert Berechtigungen für eingebettete '<iframe>'-Inhalte",
     "charset": "Zeichensatz der Webseite oder Ressource (z.B. UTF-8)",
     "http-equiv": "Meta-Informationen, die an den HTTP-Header gesendet werden",
-    "content": "Inhalt eines `<meta>`-Elements",
+    "content": "Inhalt eines '<meta>'-Elements",
     "viewport": "Definiert Ansichtsfenster-Einstellungen für mobile Geräte",
     "accesskey": "Legt eine Tastenkombination zum Aktivieren eines Elements fest",
     "translate": "Gibt an, ob ein Element übersetzt werden soll",
@@ -137,12 +137,12 @@ export let jsCards = {
     "autoplay": "Startet ein Audio- oder Video-Element automatisch",
     "loop": "Wiederholt ein Audio- oder Video-Element automatisch",
     "muted": "Stellt ein Audio- oder Video-Element standardmäßig auf stumm",
-    "poster": "Vorschaubild für ein `<video>`-Element",
+    "poster": "Vorschaubild für ein '<video>'-Element",
     "crossorigin": "Gibt an, wie Anfragen über verschiedene Ursprünge hinweg behandelt werden",
-    "preload": "Gibt an, wie ein `<audio>`- oder `<video>`-Element vorab geladen wird"
+    "preload": "Gibt an, wie ein '<audio>'- oder '<video>'-Element vorab geladen wird"
   }
   ;
-  export let cssCards = {
+  let cssCards = {
     "color": "Textfarbe festlegen",
     "background-color": "Hintergrundfarbe festlegen",
     "background-image": "Hintergrundbild hinzufügen",
@@ -242,7 +242,7 @@ export let jsCards = {
     "scroll-padding": "Innenabstand bei Scrollpunkten festlegen"
   };
 
-export let engGer = { 
+let engGer = { 
   "turn":"Wendung", 
   "evening":"Abend",
   "dinner":"Abendessen",
@@ -367,3 +367,207 @@ export let engGer = {
   "much obliged":"zu Dank verpflichtet","too thick":"zu dick","in favour of":"zu Gunsten von","in my day":"zu meiner Zeit","begin to cry":"zu schreien anfangen","on hire":"zu vermieten","breed (irr.)":"züchten","sugar":"Zucker","at first":"zuerst","by accident":"zufällig","by chance":"zufällig","content":"zufrieden","contented":"zufrieden","satisfactory":"zufriedenstellend","listen (to)":"zuhören","button up":"zuknöpfen","for example":"zum Beispiel","for instance":"zum Beispiel","partial":"zum Teil","for sale":"zum Verkauf","for the good of all":"zum Wohle aller","advance":"Zunahme","increase":"zunehmen","advance of prices":"Zunahme der Preise","matches":"Zündhölzer","tongue":"Zunge","uppermost":"zuoberst","at hand":"zur Hand","go to church":"zur Kirche gehen","in due course":"zur rechten Zeit","come to the point":"zur Sache kommen","in safekeeping":"zur sicheren Aufbewahrung","go back":"zurück gehen","bring back":"zurückbringen","give back":"zurückgeben","leave behind":"zurücklassen","together":"zusammen","bind together":"zusammenbinden","breakdown":"Zusammenbruch",
   "hang together":"zusammenhängen","jointly":"zusammenwirkend","extra":"zusätzlich","achieve":"zustandebringen","confident":"zuversichtlich","thoughtfulness":"Zuvorkommenheit","twenty":"zwanzig","twentieth":"zwanzigste","two":"zwei","two equal parts":"zwei gleiche Teile","twice":"zweimal","twenty-two":"zweiundzwanzig","twenty-second":"zweiundzwanzigste","pinch":"zwicken","among":"zwischen","amongst":"zwischen","between":"zwischen","between two persons":"zwischen zwei Personen","twelve":"zwölf","twelfth":"zwölfte" 
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const addCardButton = document.getElementById('addCardSend');
+    const storageKey = document.getElementById('localKey');
+    const cardList = document.getElementById('cardList');
+  
+})
+
+  let cardStorage = JSON.parse(localStorage.getItem(`cardStorage`)) || {};/* localStorage - speichert die neuen Vokabeln 
+parse heißt Textumwandeln in das Format was ich brauche zwei striche heißen oder.. alternative!*/
+/* lernt eigenständig die neuen Vokabeln, Startpunkt ist {}*/
+let aktStoragekey ;
+
+let storageKey = document.getElementById('localKey');
+
+
+function addNewCard() {
+    // Lade das bestehende cardStorage aus localStorage, falls vorhanden
+    let currentStorage = JSON.parse(localStorage.getItem(`cardStorage${storageKey.value}`)) || {};
+
+    // Füge den neuen Wert zu cardStorage hinzu
+    currentStorage[frage.value] = antwort.value;
+
+    // Logge die aktuellen Daten von cardStorage
+    console.log(currentStorage);
+
+    // Speichere das aktualisierte cardStorage im localStorage
+    localStorage.setItem(`cardStorage${storageKey.value}`, JSON.stringify(currentStorage));
+
+    // Logge die gespeicherten Daten zur Bestätigung
+    console.log(`Aktualisiertes cardStorage:`, JSON.stringify(currentStorage));
+
+    // Leere die Eingabefelder
+    frage.value = '';
+    antwort.value = '';
+
+    // Setze den aktuellen Schlüssel
+    aktStoragekey = `cardStorage${storageKey.value}`;
+    console.log('Aktueller storagekey:', aktStoragekey);
+
+    // Optional: Rufe eine Render-Funktion auf, um die Ansicht zu aktualisieren
+    render();
+}
+
+
+function render() {
+    cardList.innerHTML = ''; // Leert die bestehende Liste
+
+    // Holen der gespeicherten Daten aus localStorage (falls vorhanden)
+    let cardStorage = JSON.parse(localStorage.getItem(aktStoragekey)) || {};  // "aktStoragekey" sollte der Schlüssel in deinem localStorage sein
+    
+    for (let key in cardStorage) { 
+        // Erstelle ein neues Listenelement
+        const listItem = document.createElement('li');
+        listItem.classList.add('cardList');
+        listItem.textContent = `${key} - ${cardStorage[key]}`;
+
+        // Erstelle das "X"-Element
+        const xElement = document.createElement('span');
+        xElement.textContent = 'X';
+        xElement.classList.add('cButton'); // Füge die Klasse für das "X"-Element hinzu
+
+        // Füge das "X"-Element als Kind von listItem hinzu
+        listItem.appendChild(xElement);
+        
+        // Füge das Listenelement zur Liste hinzu
+        cardList.appendChild(listItem);
+    }
+}
+
+
+    document.getElementById('cardList').addEventListener('click', (event) => {
+        if (event.target.classList.contains('cButton')) {
+            const listItem = event.target.parentElement;
+            const keyToDelete = listItem.textContent.replace('X', '').split(' - ')[0].trim();
+    
+            console.log('Zu löschender Schlüssel:', keyToDelete);
+    
+            // Holen des aktuellen Objekts basierend auf 'cardStorageHTML'
+            let cardStorage = JSON.parse(localStorage.getItem(aktStoragekey)) || {};
+    
+            // Prüfen, ob der Schlüssel existiert
+            if (keyToDelete in cardStorage) {
+                // Lösche den entsprechenden Wert (z. B. 'id', 'class', etc.)
+                delete cardStorage[keyToDelete];
+    
+                // Speichern der aktualisierten Daten im LocalStorage
+                localStorage.setItem(aktStoragekey, JSON.stringify(cardStorage));
+                
+                
+                // Aktualisiere die Ansicht (render())
+                render();
+            } else {
+                console.error('Schlüssel nicht gefunden:', keyToDelete);
+            }
+        }
+    });
+    
+    
+    
+    
+
+
+
+// load cards to localstorage
+function engGerCardsLoad(){
+    engGer;
+    localStorage.setItem(`cardStorageengGer`, JSON.stringify(engGer));
+    cardStorage = JSON.parse(localStorage.getItem(`cardStorageengGer`)) || {};
+    aktStoragekey = `cardStorageengGer`;
+    console.log(aktStoragekey);
+    render();
+}
+
+function cssCardsLoad(){
+    cssCards;
+      
+    localStorage.setItem(`cardStorageCSS`, JSON.stringify(cssCards));
+/*         const cardLoadContent = document.querySelector('.cardLoadContent');
+      cardLoadContent.innerHTML = ` <h4>Laden der CSS-Daten abgeschlossen</h4>
+      Es wurden CSS Karteikarten in den Localstorage geladen!`; */
+      cardStorage = JSON.parse(localStorage.getItem(`cardStorageCSS`)) || {};
+      aktStoragekey = `cardStorageCSS`;
+      console.log(aktStoragekey);
+      render();
+      console.log('cssCardsLoad wurder erfolgreich abgeschlossen!')
+}
+
+
+function htmlCardsLoad(){
+      htmlCards;
+      console.log(htmlCards)
+      localStorage.setItem(`cardStorageHTML`, JSON.stringify(htmlCards));
+/*           const cardLoadContent = document.querySelector('.cardLoadContent');
+      cardLoadContent.innerHTML = ` <h4>Laden der HTML-Daten abgeschlossen</h4>
+      Es wurden HTML Karteikarten in den Localstorage geladen!`; */
+      aktStoragekey = `cardStorageHTML`;
+      cardStorage = JSON.parse(localStorage.getItem(`cardStorageHTML`)) || {};
+      render();
+}
+
+
+
+function jsCardsLoad(){
+    
+    jsCards;
+    /* const cardLoadContent = document.querySelector('.cardLoadContent'); */
+    localStorage.setItem(`cardStorageJS`, JSON.stringify(jsCards)); 
+    /* cardLoadContent.innerHTML = ` <h4>Laden der HTML-Daten abgeschlossen</h4>
+    Es wurden JavaScript Karteikarten in den Localstorage geladen!`; */
+    aktStoragekey = `cardStorageJS`;
+    cardStorage = JSON.parse(localStorage.getItem(`cardStorageJS`)) || {};
+    
+    render();
+}
+
+/* function allCardsLoad(){
+    let allCards = ({...cssCards, ...jsCards, ...htmlCards});// Spread-Operator 
+    console.log(allCards)
+    localStorage.setItem(`cardStorageAll`, JSON.stringify(allCards));
+    render();
+} */
+
+
+
+
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i); // Hole den Schlüssel
+    if (key.startsWith("cardStorage")) { // Prüfe, ob der Schlüssel mit "cardStorage" beginnt
+        console.log(key); // Gib den Schlüssel aus
+        let savedCards = document.querySelector('.savedCards');
+        const keySuffix = key.replace("cardStorage", ""); // Entferne den Präfix
+        
+        // Füge den Button ein, ohne bestehende Elemente zu ersetzen
+        savedCards.insertAdjacentHTML('beforeend', `<button id='${key}'>${keySuffix}</button>`);
+        
+        // Füge den Click-Listener hinzu
+        clickHinzufuegen(key);
+    }
+}
+
+function clickHinzufuegen(key) {
+    document.getElementById(key).addEventListener('click', () => {
+        console.log('klick');
+        let storedData = localStorage.getItem(key);
+
+        console.log(key + " geklickt - storedData:", storedData); // Debugging-Ausgabe
+
+        if (storedData) {
+            // Das geladene "storedData" wird als JSON interpretiert
+            cardStorage = JSON.parse(storedData) || {};  // Verwende den Wert direkt
+            
+            // Gib den **Schlüssel** des lokalen Speichers aus
+            console.log('Aktueller Schlüssel:', key);  // Hier loggen wir den Schlüssel
+            
+            aktStoragekey = key; // Setze das neue cardStorage als aktStoragekey
+            render();
+        } else {
+            console.log("Keine gespeicherten HTML-Daten gefunden.");
+        }
+    });
+}
+
+

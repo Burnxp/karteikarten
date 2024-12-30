@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body >
-    <header></header>
+    <h1 class="ueb">Add Cards</h1> 
+      <hr>
     <aside class="navContent">
       <ul class="navi">
         <li class="myCards"><a href="index.html">Home</a></li>
@@ -17,32 +18,56 @@
     </aside><div class="content">
     <div class="addCard">
       <div class="cardCollection">
-        <h4 class="uebh2">Lade hier Karteikarten für HTML, CSS und JavaScript!</h4>
+        <h4 class="uebh2">Lade hier Karteikarten von der Bibliotek in dein Localstorage!</h4>
         <p class="cardLoad">
 
-          <button class="htmlCards" onclick="loadLocalStorage()">HTML-Karten</button>
+          <button class="htmlCards" onclick="htmlCardsLoad()">HTML-Karten</button>
           <button class="cssCards" onclick="cssCardsLoad()">CSS-Karten</button>
           <button class="JavaScript" onclick="jsCardsLoad()">JavaScript</button>
-          <button class="allCards" onclick="allCardsLoad()">Alle Karten</button>
+          <button class="engGer" onclick="engGerCardsLoad()">Englisch / Deutsch</button>
+          
 
         </p>
+        <p class="savedCards">Hier siehst du die gespeicherten Karten:</p>
         <p class="cardLoadContent"></p>
       </div>
-<!--       <div>
+      <div>
+        <label for="localKey">Local Storage Key</label>
+        <input type="text" id="localKey">
       <label for="frage">Frage:</label>
       <textarea name="frage" id="frage"></textarea></div>
       <div>
         <label for="antwort">Antwort:</label>
         <textarea name="antwort" id="antwort"></textarea>                       
 
-      </div> -->
-<!--       
+      </div>
+      
        <button  id="addCardSend" onclick="addNewCard()">Karte hinzufügen</button>
-    </div> -->
+    </div>
     <label for="">Verzeichis:</label>
     <div id="cardList"></div>
   </div>
-  <script type="module" src="cardData.js"></script>
-  <script type="module" src="script.js"></script>
+  <hr>
+  <div class="coffee">
+    <a 
+  href="https://www.paypal.com/donate?business=berndschaller@gmx.net&currency_code=EUR&amount=2.50">
+  <button>Buy Me a Coffee 2,50 €</button>
+  </div>
+  <hr>
+  <footer>
+    &copy;2024 Bernd Schaller <a href="impressum.html">Impressum</a> <a href="datenschutz.html">Datenschutz</a><br>
+    Letzte Aktuallisierung: 29.12.2024 <br>
+
+    
+      
+
+  </footer>
+  <script src="addcards.js"></script>
+  <script src="script.js"></script>
+  <script>
+
+
+  </script>
+
   </body>
 </html>

@@ -118,7 +118,10 @@ h1.ueb {
 li{
     width: 10rem;
     margin: 1rem;
-    display: block;
+    display: flex;
+    align-items: center; /* Vertikale Zentrierung des Textes */
+    justify-content: space-between; /* Setzt den Text links und das "X"-Element rechts */
+   
     padding: .5rem;
     border: 0.1rem solid black;
     text-align: center;
@@ -129,6 +132,11 @@ textarea {
     height: 20vh;
 
     padding: 1rem;
+    box-shadow: black .2rem .4rem .3rem;
+}
+textarea, input{
+    opacity: .6;
+    
 }
 
 button {
@@ -213,7 +221,7 @@ label {
 
 .front{
     margin: 0;
-    font-size: 2rem;
+    font-size: auto;
     transition: all 2s linear 0.1s ;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
@@ -308,14 +316,42 @@ hr{
 
 
 .closeButton {
+    cursor: pointer;
     color: red;
     text-align: right;
     cursor: pointer;
     align-self: flex-start;
     order: 1;
-    font-size: 20px;
+    font-size: 1rem;
+    padding: 0.1rem;
 }
 
 .closeButton:hover {
     color: darkred;
+}
+
+
+.coffee{
+    display: flex;
+    margin: 0.3rem;
+    justify-content: center;
+}
+
+.cardList {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Erstes Element (Text) nimmt den Platz, "X" hat die auto-Größe */
+    align-items: center; /* Vertikale Zentrierung des Textes */
+    margin-bottom: 5px; /* Abstand zwischen den Listeneinträgen */
+    padding-right: 30px; /* Gibt Platz für das "X"-Element auf der rechten Seite */
+}
+
+.cButton {
+    cursor: pointer; /* Mauszeiger ändert sich, wenn man mit der Maus über das "X" fährt */
+    font-weight: bold;
+    color: red; /* Du kannst die Farbe anpassen */
+    font-size: 18px; /* Du kannst die Größe anpassen */
+    background: none; /* Keine Hintergrundfarbe */
+    border: none; /* Kein Rand */
+    padding: 5px; /* Platz um das "X" herum */
+    justify-self: end;
 }
