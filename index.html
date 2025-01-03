@@ -22,11 +22,11 @@
     <main>
       <summary><h1>Lade-Karten:</h1></summary><details open><summary>Öffnen / Schließen</summary>
       <div class="cardsLoad">
+      </div>
+      <hr>
+      <div class="level"></div>
       
-      
-
-    
-    </div><hr>
+      <hr>
   </details>
       <div class="card"><p class="closeButton"></p>
         <div id="message" class="message">
@@ -36,15 +36,15 @@
         <p class="front"></p>
       </div>
       <div id="nextCard">
-        <label for="badCard" id="spanBadCard">
-          <input type="checkbox" id="badCard"> Bad Card
-        </label>
-        <button id="nextCardButton">Nächste Karte</button>
+        
+        <button  id="nextCardButtonFalse"> &#x2717; Nächste Karte</button>
+        
+        <button id="nextCardButtonTrue">&check; Nächste Karte</button>
       </div>
       
       <details>
         <summary>Info</summary>
-        Wähle Bad Cards aus, um die Karte extra zu speichern. Um sie später, unter Karten laden: Bad Cards zu wiederholen.
+        Wenn du die Karte richtig beantwortest, wird sie in die nächste höhere Ebene verschoben. Bei einer falschen Antwort rutscht die Karte eine Ebene nach unten. Dadurch musst du bereits gelernte Karten nicht ständig wiederholen.
       </details>
     </main>
     <hr>
