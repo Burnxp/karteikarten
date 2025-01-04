@@ -79,7 +79,7 @@ h1.ueb {
     word-wrap: break-word; /* Erlaubt Zeilenumbruch bei langen Wörtern */
 }
 
-.cardsLoad, .level, .cardLoad{
+.cardsLoad, .level, .cardLoad, .savedCards{
     display: flex; /* Flexbox aktivieren */
     justify-content: center; /* Horizontale Zentrierung */
     align-items: center; /* Vertikale Zentrierung */

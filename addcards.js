@@ -5362,6 +5362,112 @@ let spanisch_deutsch = {
   "¿Dónde está la parada de autobús?": "Wo ist die Bushaltestelle?",
   "¿A qué hora sale el tren?": "Wann fährt der Zug ab?",
 };
+frGer = {
+  "bonjour": "Guten Tag",
+  "au revoir": "Auf Wiedersehen",
+  "merci": "Danke",
+  "s'il vous plaît": "Bitte",
+  "oui": "Ja",
+  "non": "Nein",
+  "excusez-moi": "Entschuldigen Sie",
+  "pardon": "Entschuldigung",
+  "je suis": "Ich bin",
+  "tu es": "Du bist",
+  "il est": "Er ist",
+  "elle est": "Sie ist",
+  "nous sommes": "Wir sind",
+  "vous êtes": "Ihr seid / Sie sind",
+  "ils sont": "Sie sind",
+  "avoir": "haben",
+  "je veux": "Ich möchte",
+  "je peux": "Ich kann",
+  "je vais": "Ich werde",
+  "aller": "gehen",
+  "faire": "machen",
+  "manger": "essen",
+  "boire": "trinken",
+  "aimer": "mögen",
+  "parler": "sprechen",
+  "comprendre": "verstehen",
+  "savoir": "wissen",
+  "maison": "Haus",
+  "voiture": "Auto",
+  "ami": "Freund",
+  "amour": "Liebe",
+  "famille": "Familie",
+  "travail": "Arbeit",
+  "école": "Schule",
+  "livre": "Buch",
+  "chaise": "Stuhl",
+  "table": "Tisch",
+  "fenêtre": "Fenster",
+  "porte": "Tür",
+  "eau": "Wasser",
+  "pain": "Brot",
+  "fromage": "Käse",
+  "vin": "Wein",
+  "bière": "Bier",
+  "café": "Kaffee",
+  "thé": "Tee",
+  "sucre": "Zucker",
+  "sel": "Salz",
+  "poivre": "Pfeffer",
+  "chat": "Katze",
+  "chien": "Hund",
+  "soleil": "Sonne",
+  "lune": "Mond",
+  "étoile": "Stern",
+  "ciel": "Himmel",
+  "terre": "Erde",
+  "mer": "Meer",
+  "montagne": "Berg",
+  "rivière": "Fluss",
+  "arbre": "Baum",
+  "fleur": "Blume",
+  "jour": "Tag",
+  "nuit": "Nacht",
+  "matin": "Morgen",
+  "soir": "Abend",
+  "heure": "Stunde",
+  "minute": "Minute",
+  "temps": "Zeit",
+  "personne": "Person",
+  "homme": "Mann",
+  "femme": "Frau",
+  "enfant": "Kind",
+  "garçon": "Junge",
+  "fille": "Mädchen",
+  "voix": "Stimme",
+  "musique": "Musik",
+  "film": "Film",
+  "photo": "Foto",
+  "ordinateur": "Computer",
+  "téléphone": "Telefon",
+  "route": "Straße",
+  "train": "Zug",
+  "avion": "Flugzeug",
+  "bus": "Bus",
+  "vélo": "Fahrrad",
+  "argent": "Geld",
+  "prix": "Preis",
+  "marché": "Markt",
+  "magasin": "Geschäft",
+  "hôpital": "Krankenhaus",
+  "police": "Polizei",
+  "église": "Kirche",
+  "chaud": "heiß",
+  "froid": "kalt",
+  "petit": "klein",
+  "grand": "groß",
+  "beau": "schön",
+  "moche": "hässlich",
+  "facile": "einfach",
+  "difficile": "schwierig",
+  "bien": "gut",
+  "mal": "schlecht",
+  "toujours": "immer",
+  "jamais": "nie",
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const addCardButton = document.getElementById("addCardSend");
@@ -5409,7 +5515,7 @@ function addNewCard() {
   // Optional: Rufe eine Render-Funktion auf, um die Ansicht zu aktualisieren
   render();
 }
-
+aktStoragekey;
 function render() {
   cardList.innerHTML = ""; // Leert die bestehende Liste
 
@@ -5471,6 +5577,17 @@ function engGerCardsLoad() {
   localStorage.setItem(`cardStorageengGer`, JSON.stringify(engGer));
   cardStorage = JSON.parse(localStorage.getItem(`cardStorageengGer`)) || {};
   aktStoragekey = `cardStorageengGer`;
+  console.log(aktStoragekey);
+  render();
+  loadKeysFromStorage();
+}
+
+// load cards to localstorage
+function frGerCardsLoad() {
+  frGer;
+  localStorage.setItem(`cardStoragefrGer`, JSON.stringify(frGer));
+  cardStorage = JSON.parse(localStorage.getItem(`cardStoragefrGer`)) || {};
+  aktStoragekey = `cardStoragefrGer`;
   console.log(aktStoragekey);
   render();
   loadKeysFromStorage();
@@ -5590,10 +5707,10 @@ function clickHinzufuegen(key) {
       loadKeysFromStorage();
       render();
     });
-  } else {
-    // Vermeide mehrfaches Hinzufügen von Event-Listenern
+  } 
 
-    if (!button.dataset.listenerAdded) {
+
+    
       button.addEventListener("click", () => {
         console.log("klick");
         let storedData = localStorage.getItem(key);
@@ -5613,7 +5730,8 @@ function clickHinzufuegen(key) {
           console.log("Keine gespeicherten HTML-Daten gefunden.");
         }
       });
-      button.dataset.listenerAdded = true;
+
     }
-  }
-}
+  
+
+

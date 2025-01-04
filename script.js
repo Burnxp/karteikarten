@@ -1,4 +1,4 @@
-let spanisch;
+let language ;
 
 
 let randomNextCard; 
@@ -75,14 +75,22 @@ function showNextCard(frontSideSelector) {
             currentCardStorageKey === "2cardStoragespaGer"
 
         ) {
-            vorlesen(frontSide, randomNextCard);
+            language ='es-ES'
+            vorlesen(frontSide, randomNextCard, language);
         }
 
         if (currentCardStorageKey === "cardStorageengGer" ||
             currentCardStorageKey === "1cardStorageengGer" ||
             currentCardStorageKey === "2cardStorageengGer") {
-                vorleseneng(frontSide, randomNextCard);
+                language =  'en-US'
+                vorlesen(frontSide, randomNextCard, language);
             }
+       if (currentCardStorageKey === "cardStoragefrGer" ||
+           currentCardStorageKey === "1cardStoragefrGer" ||
+           currentCardStorageKey === "2cardStoragefrGer") {
+               language =  'fr-FR'
+               vorlesen(frontSide, randomNextCard, language);
+           }
 
     // Erstelle das Kartenelement und handle Klicks
     
@@ -94,7 +102,7 @@ function showNextCard(frontSideSelector) {
             if (showAnswer) {
                 frontSide.innerHTML = '';
                 frontSide.innerHTML += `${randomNextCard}`; // Frage anzeigen
-                vorlesen(frontSide, randomNextCard);// button hinzufügen
+                vorlesen(frontSide, randomNextCard, language);// button hinzufügen
             } else {
                 frontSide.innerHTML = '';
                 frontSide.innerHTML += `${currentCardStorage[randomNextCard]}`; // Antwort anzeigen
@@ -383,35 +391,45 @@ console.log(document.getElementById('addCardSend'));
 
 
 
-function vorlesen(frontSide, randomNextCard){
+function vorlesen(frontSide, randomNextCard, language) {
     const readButton = document.createElement('button');
     readButton.textContent = 'Vorlesen';
     readButton.style.marginTop = '10px';
     frontSide.appendChild(document.createElement('br'));
     frontSide.appendChild(readButton);
 
-    // Event-Listener für das Vorlesen
     readButton.addEventListener('click', () => {
-        const utterance = new SpeechSynthesisUtterance(randomNextCard);
-        utterance.lang = 'es-ES'; // Spanische Sprache
-        speechSynthesis.speak(utterance);
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(randomNextCard);
+            utterance.lang = language; // Sprache festlegen
+
+            // Alle verfügbaren Stimmen durchsuchen
+            const voices = speechSynthesis.getVoices();
+            let selectedVoice = null;
+
+            // Stimme auswählen, die der gewünschten Sprache entspricht
+            voices.forEach((voice) => {
+                if (voice.lang.startsWith(language)) {
+                    selectedVoice = voice;
+                }
+            });
+
+            // Wenn eine passende Stimme gefunden wurde, verwenden
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+            } else {
+                console.log('Keine passende Stimme gefunden');
+            }
+
+            // Verzögerung hinzufügen, um die Stimmenliste vollständig zu laden
+            setTimeout(() => {
+                speechSynthesis.speak(utterance);
+            }, 100);
+        } else {
+            console.log('Sprachsynthese wird nicht unterstützt');
+        }
     });
 }
-
-function vorleseneng (frontSide, randomNextCard){
-    const readButton = document.createElement('button');
-    readButton.textContent = 'Vorlesen';
-    readButton.style.marginTop = '10px';
-    frontSide.appendChild(document.createElement('br'));
-    frontSide.appendChild(readButton);
-
-    readButton.addEventListener('click', () => {
-        const utterance = new SpeechSynthesisUtterance(randomNextCard);
-        utterance.lang = 'en-US' // Englische Sprache
-        speechSynthesis.speak(utterance);
-    })
-}
-
 
 
 function moveCardToNextLevelOrPrevious(currentKey, cardId, correct) {
