@@ -13,6 +13,35 @@
     
 }
 
+.selfCards, .cardVerzeichnis, .keyDelete, .cardCollection{
+    margin: 0 auto;
+    border: #120b6e solid 1px;
+    width: 80vw;
+    padding: 0.5rem;
+    background-color: #34c3fc;
+    font-family: 'Great Vibes';
+    box-shadow: .2rem .2rem .2rem black;
+    text-align: center;
+    gap: .5rem;
+    margin-bottom: 0.5rem
+}
+.cardVerzeichnis, .keyDelete{
+
+    font-family: sans-serif;
+}
+.cardVerzeichnis{
+    background-image: var(--card-img-js);
+}
+
+.lsKeyF, .lsKeyA{
+    display: block;
+    text-align: left;
+    align-items: left;
+}
+
+
+
+
 .htmlCards{
     background-image: var(--card-img-html);
 }
@@ -49,7 +78,7 @@ body{
     font-family: 'Great Vibes';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/great-vibes-v19-latin_latin-ext-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('/lib/fonts/great-vibes-v19-latin_latin-ext-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
 h1.ueb {
@@ -79,7 +108,7 @@ h1.ueb {
     word-wrap: break-word; /* Erlaubt Zeilenumbruch bei langen Wörtern */
 }
 
-.cardsLoad, .level, .cardLoad, .savedCards{
+.cardsLoad, .level, .cardLoad, .savedCards, .selfCards, .cardVerzeichnis, .keyDelete{
     display: flex; /* Flexbox aktivieren */
     justify-content: center; /* Horizontale Zentrierung */
     align-items: center; /* Vertikale Zentrierung */
@@ -130,7 +159,7 @@ li{
 
 textarea {
     width: 20vw;
-    height: 20vh;
+    height: 15vh;
 
     padding: 1rem;
     box-shadow: black .2rem .4rem .3rem;
@@ -195,13 +224,13 @@ button {
     }
     #cardList, .addCard{
         width: 80vw;
-        margin: 2rem auto;
+        margin: 0rem auto;
         height: auto;
         
     }
     textarea{
-        width: 80vw;
-        height: 10vh;
+        width: 70vw;
+        height: 5vh;
     }
 
     #nextCard {
@@ -226,9 +255,13 @@ button {
 }
 
 
-label {
+.lsKey, .lsKeyA, .lsKeyF {
     display: block;
     padding: .2rem;
+    font-size: 1.5rem;
+}
+.keyDelete{
+    background-image: var(--card-img-badCards);
 }
 
 .front{

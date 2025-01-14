@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Karteikarten</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="lib/css/style.css"/>
   </head>
   <body >
     
@@ -20,14 +20,18 @@
       
     </aside>
     <main>
-      <summary><h1>Lade-Karten:</h1></summary><details open><summary>Öffnen / Schließen</summary>
+      
+      <h2 class="inhalt">
+        Speicher laden
+      </h2>
+      
       <div class="cardsLoad">
       </div>
       <hr>
       <div class="level"></div>
       
       <hr>
-  </details>
+  
       <div class="card"><p class="closeButton"></p>
         <div id="message" class="message">
           Keine gespeicherten Karten unter diesem Schlüssel gefunden. Bitte wähle andere Karten!
@@ -42,10 +46,13 @@
         <button id="nextCardButtonTrue">&check; Nächste Karte</button>
       </div>
       
-      <details>
-        <summary>Info</summary>
-        Wenn du die Karte richtig beantwortest, wird sie in die nächste höhere Ebene verschoben. Bei einer falschen Antwort rutscht die Karte eine Ebene nach unten. Dadurch musst du bereits gelernte Karten nicht ständig wiederholen.
-      </details>
+      
+      <h2 class="inhalt">Info</h2>
+        <p class="info">
+          Wenn du die Karte richtig beantwortest, wird sie in die nächste höhere Ebene verschoben (z.B von Fach 1 zu Fach 2). Bei einer falschen Antwort rutscht die Karte eine Ebene nach unten. So kannst du auswählen welche Karten du wiederholen möchtest. Viel Erfolg!
+        </p>
+        
+      
     </main>
     <hr>
     <div class="coffee">
@@ -64,6 +71,8 @@
     
     
    
-    <script src="script.js"></script>
+    <script src="lib/js/jquery371min.js"></script>
+    <script src="lib/js/script.js"></script>
+    <script src="lib/js/jquery.js"></script>
   </body>
 </html>
