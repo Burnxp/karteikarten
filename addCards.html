@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="lib/css/okWindow.css"/>
   </head>
   <body >
-    <h1 class="ueb">Add Cards</h1> 
+    <header>
+      <h1 class="ueb">Add Cards</h1> 
       <hr>
     <aside class="navContent">
       <ul class="navi">
@@ -17,6 +18,8 @@
         <li class="help"><a href="help.html">Help</a></li>
       </ul>
     </aside>
+    </header>
+
     
     <div class="addCard">
       <div class="cardCollection">
@@ -32,16 +35,14 @@
           
 
         </p>
-        <div class="savedCard">
-          <h2>Hier siehst du die gespeicherten Karten:</p>
-        <p class="savedCards"></p>
+
         <p class="cardLoadContent"></p>
         </div>
         
       </div>
       <div class="selfCards">
-        <div>
-          <label for="localKey" class="lsKey">Local Storage Key</label>
+        <div><p class="sans">Hier kannst du eigene Karten erstellen:</p>
+          <label for="localKey" class="lsKey">Speicher schlüssel <div class="inhalt">&#8505;</div><span class="info">Gib das Thema ein, für das du Karteikarten erstellen möchtest. Zum Beispiel: Englisch.</span></label>
           <input type="text" id="localKey"><br>
         <label for="frage" class="lsKeyF">Frage:</label>
         <textarea name="frage" id="frage"></textarea></div>
@@ -56,15 +57,20 @@
 
     </div>
     <div class="cardVerzeichnis">
-      <h2>Verzeichis:</h2>
+    <div class="savedCard">
+      <p class="inhalt">Hier siehst du die gespeicherten Kartensammlungen: &#8505;</p><span class="info">Hier kannst du mit einen Klick auf den jeweiligen Button deine Karten anzeigen lassen.</span>
+      <h4 class="tLeft">Kartenverzeichis:</h4>
+    <p class="savedCards"></p>
+    
+      
       <div id="cardList"></div>
     </div>
-    
+    </div>
 
-  <hr>
+  
   <div class="keyDelete">
-
-      <h2>Hier kannst du die Karten von bestimmten bereichen löschen!</h2>
+    
+      <p>Hier kannst du die Karten von bestimmten bereichen löschen!</p>
       <p class="deleteKey"></p>
     
   </div>

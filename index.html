@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Karteikarten</title>
-    <link rel="manifest" href="manifest.json">
+    
     <link rel="stylesheet" href="lib/css/style.css"/>
   </head>
   <body >
@@ -20,9 +20,10 @@
       
     </aside>
     <main>
+    <div class="cardsInStorage">
       
-      <h2 class="inhalt">
-        Speicher laden
+      <h2>
+        Bereich laden
       </h2>
       
       <div class="cardsLoad">
@@ -30,7 +31,7 @@
       <hr>
       <div class="level"></div>
       
-      <hr>
+      
   
       <div class="card"><p class="closeButton"></p>
         <div id="message" class="message">
@@ -53,7 +54,9 @@
         </p>
         
       
-    </main>
+    </div>
+    <h1 class="noCardsInStorage">Du hast noch keine Karten gespeichert. Gehe auf <a href="addCards.html">ADD Cards</a> um deine ersten Karten zu speichern!</h1>
+  </main>
     <hr>
     <div class="coffee">
       <a 

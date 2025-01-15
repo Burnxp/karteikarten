@@ -13,51 +13,47 @@
     
 }
 
-.selfCards, .cardVerzeichnis, .keyDelete, .cardCollection{
+.selfCards, .cardVerzeichnis, .cardCollection, .keyDelete{
     margin: 0 auto;
-    border: #120b6e solid 1px;
+    border-radius: .4rem;
     width: 80vw;
     padding: 0.5rem;
-    background-color: #34c3fc;
+    background-color: #ecf2f585;
     font-family: 'Great Vibes';
     box-shadow: .2rem .2rem .2rem black;
     text-align: center;
     gap: .5rem;
     margin-bottom: 0.5rem
 }
+/* Fixiere den Header am oberen Rand */
+
+
 .cardVerzeichnis, .keyDelete{
 
     font-family: sans-serif;
 }
+
 .cardVerzeichnis{
     background-image: var(--card-img-js);
 }
 
-.lsKeyF, .lsKeyA{
-    display: block;
-    text-align: left;
-    align-items: left;
+
+.selfCards p, span{
+    font-family: sans-serif;
+    font-size: .8rem;
 }
 
-
-
-
-.htmlCards{
-    background-image: var(--card-img-html);
+.noCardsInStorage{
+    text-align: center;
+    margin: 0 auto;
+    background-color: blanchedalmond;
+    background-image: var(--card-img);
+    box-shadow: rgb(124, 123, 123) 0.1rem 0.1rem 0.5rem 0.5rem;
 }
-.allCards{
-    background-image: var(--card-img-allCards);
-}
-.cssCards{
-    background-image: var(--card-img-css);
-}
-.jsCards{
-    background-image: var(--card-img-js);
+.noCardsInStorage a{
+    color: #120b6e;
 }
 
-.badCards{
-    background-image: var(--card-img-badCards);
-}
 
 
 body{
@@ -108,7 +104,7 @@ h1.ueb {
     word-wrap: break-word; /* Erlaubt Zeilenumbruch bei langen Wörtern */
 }
 
-.cardsLoad, .level, .cardLoad, .savedCards, .selfCards, .cardVerzeichnis, .keyDelete{
+.cardsLoad, .level, .cardLoad, .savedCards, .selfCards, .cardVerzeichnis{
     display: flex; /* Flexbox aktivieren */
     justify-content: center; /* Horizontale Zentrierung */
     align-items: center; /* Vertikale Zentrierung */
@@ -119,6 +115,12 @@ h1.ueb {
 }
 .cardsLoad h1{
     width: 80vw;
+}
+.inhalt{
+    padding: 0.3rem;
+}
+.info{
+    color: blue;
 }
 
 
@@ -402,4 +404,11 @@ hr{
     border: none; /* Kein Rand */
     padding: 5px; /* Platz um das "X" herum */
     justify-self: end;
+}
+
+.lsKeyF, .lsKeyA, .tLeft, .cardVerzeichnis{
+    display: block;
+    flex-direction: left;
+    text-align: left;
+    align-items: left;
 }
