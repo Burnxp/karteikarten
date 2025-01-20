@@ -1,11 +1,12 @@
 /* Modal-Hintergrund */
-.modal {
+.modal, .modalSave, .modalVerzeichnis {
+    font-family: sans-serif;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.199);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,11 +15,22 @@
 
 /* Modal-Inhalt */
 .modal-content {
-    background: rgba(184, 20, 20, 0.781);
+    background: rgba(184, 20, 20, 0.897);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal-Inhalt */
+.modal-info-content {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /* Buttons im Modal */
@@ -42,4 +54,8 @@
 #confirmNo {
     
     color: rgb(255, 255, 255);
+}
+
+#confirmDanke {
+    background-image: var(--button-img);
 }

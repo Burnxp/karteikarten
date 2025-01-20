@@ -6,29 +6,35 @@
     <title>Karteikarten</title>
     <link rel="stylesheet" href="lib/css/style.css"/>
     <link rel="stylesheet" href="lib/css/okWindow.css"/>
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
   </head>
   <body >
     <header>
-      <h1 class="ueb">Add Cards</h1> 
-      <hr>
-    <aside class="navContent">
+   
+    <nav class="navContent">
       <ul class="navi">
-        <li class="myCards"><a href="index.html">Home</a></li>
+        <li class="myCards"><a href="index.html">My Cards</a></li>
         <li class="addCards"><a href="#">Add Cards</a></li>
         <li class="help"><a href="help.html">Help</a></li>
       </ul>
-    </aside>
+    </nav>
     </header>
-
+    <h1 class="ueb">Add Cards</h1> 
     
     <div class="addCard">
       <div class="cardCollection">
         <h2 class="inhalt">Lade hier Karteikarten von der Bibliotek in dein Localstorage!</h2>
         <p class="cardLoad">
 
-          <button class="htmlCards" onclick="htmlCardsLoad()">HTML-Karten</button>
+<!--           <button class="htmlCards" onclick="htmlCardsLoad()">HTML-Karten</button>
           <button class="cssCards" onclick="cssCardsLoad()">CSS-Karten</button>
-          <button class="JavaScript" onclick="jsCardsLoad()">JavaScript</button>
+          <button class="JavaScript" onclick="jsCardsLoad()">JavaScript</button> -->
           <button class="engGer" onclick="engGerCardsLoad()">Englisch / Deutsch</button>
           <button class="engGer" onclick="spaGerCardsLoad()">Spanisch / Deutsch</button>
           <button class="frGer" onclick="frGerCardsLoad()">Französisch / Deutsch</button>
@@ -42,7 +48,7 @@
       </div>
       <div class="selfCards">
         <div><p class="sans">Hier kannst du eigene Karten erstellen:</p>
-          <label for="localKey" class="lsKey">Speicher schlüssel <div class="inhalt">&#8505;</div><span class="info">Gib das Thema ein, für das du Karteikarten erstellen möchtest. Zum Beispiel: Englisch.</span></label>
+          <label for="localKey" class="lsKey">Speicher Bereich <div class="inhalt1">&#8505;</div></label>
           <input type="text" id="localKey"><br>
         <label for="frage" class="lsKeyF">Frage:</label>
         <textarea name="frage" id="frage"></textarea></div>
@@ -58,7 +64,7 @@
     </div>
     <div class="cardVerzeichnis">
     <div class="savedCard">
-      <p class="inhalt">Hier siehst du die gespeicherten Kartensammlungen: &#8505;</p><span class="info">Hier kannst du mit einen Klick auf den jeweiligen Button deine Karten anzeigen lassen.</span>
+      <p class="inhalt2">Hier siehst du die gespeicherten Kartensammlungen: &#8505;</p>
       <h4 class="tLeft">Kartenverzeichis:</h4>
     <p class="savedCards"></p>
     

@@ -10,7 +10,18 @@
 
     --card-img-html:linear-gradient(white, rgb(220, 220, 220)); /* Gainsboro */;
     --card-img-badCards: linear-gradient(white, rgb(255, 182, 193)); /* LightPink */;
+
+    --empty-fach: linear-gradient(white, gray);
     
+    
+}
+
+.leer{
+    background-image: var(--empty-fach);
+}
+
+a{
+    text-decoration: none;
 }
 
 .selfCards, .cardVerzeichnis, .cardCollection, .keyDelete{
@@ -44,6 +55,10 @@
 }
 
 .noCardsInStorage{
+    width: 80vw;
+    height: 25vh;
+    padding: 2.5rem 1rem 1rem 1rem;
+    color: #8d1a25c9;
     text-align: center;
     margin: 0 auto;
     background-color: blanchedalmond;
@@ -122,8 +137,6 @@ h1.ueb {
 .info{
     color: blue;
 }
-
-
 .navContent{
     background-color: var(--bg-color);
     width: 80vw;
@@ -132,20 +145,40 @@ h1.ueb {
 
 }
 
-.navi, a{
-    text-decoration: none;
-    list-style: none;
-}
-
 .navi{
     display: flex;
-    flex-direction: row;
     padding: 0;
     margin: 0;
-    margin: auto;
-    
-    
+    margin: 0 auto; 
+    /* background-color: rgba(95, 178, 255, 0.377);  */
 }
+.help, .myCards, .addCard{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+li a{
+    color: #0d00c2;
+    list-style: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+}
+li.addCards:hover, li.help:hover, li.myCards:hover, .navi+li:hover, button {
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color:#ecf2f585;
+}
+
+li.addCards:active, li.help:active, li.myCards:active, .navi+li:active {
+    background-color: #007BFF; /* Beispiel: Blau für Klick */
+    color: white; /* Optional: Textfarbe ändern */
+}
+.navi li{
+    border-radius: 1rem;
+}
+
 
 li{
     width: 10rem;
@@ -155,7 +188,7 @@ li{
     justify-content: space-between; /* Setzt den Text links und das "X"-Element rechts */
    
     padding: .5rem;
-    border: 0.1rem solid black;
+    
     text-align: center;
 }
 
@@ -343,7 +376,7 @@ input[type="checkbox"] {
 /* Optional: Stil für die Animation */
 .message.show {
     display: block;
-    animation: fadeInOut 7s forwards; /* Einfading + Ausblenden nach 3 Sekunden */
+    animation: fadeInOut 5s forwards; /* Einfading + Ausblenden nach 3 Sekunden */
 }
 
 @keyframes fadeInOut {
@@ -411,4 +444,8 @@ hr{
     flex-direction: left;
     text-align: left;
     align-items: left;
+}
+
+.cardsLoad button, .level button{
+    margin: 0.5rem;
 }
