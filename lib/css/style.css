@@ -119,15 +119,7 @@ h1.ueb {
     word-wrap: break-word; /* Erlaubt Zeilenumbruch bei langen Wörtern */
 }
 
-.cardsLoad, .level, .cardLoad, .savedCards, .selfCards, .cardVerzeichnis{
-    display: flex; /* Flexbox aktivieren */
-    justify-content: center; /* Horizontale Zentrierung */
-    align-items: center; /* Vertikale Zentrierung */
-    text-align: center; /* Zusätzliche Absicherung */
-    flex-wrap: wrap;
-    gap: .5rem;
 
-}
 .cardsLoad h1{
     width: 80vw;
 }
@@ -205,11 +197,12 @@ textarea, input{
 }
 
 button {
-    width: 30vw;
+    width: 30vw; 
     height: 5vh;
+    margin: 0.5rem;
     background-image: var(--button-img);
 }
-.deleteKey{
+.deleteKey, .savedCards{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -233,7 +226,7 @@ button {
     gap: 0.5rem;
 }
 
-@media (max-width:  35rem){
+@media (max-width: 35rem){
     body{
         display: block;
         margin: 0;
@@ -432,7 +425,7 @@ hr{
     cursor: pointer; /* Mauszeiger ändert sich, wenn man mit der Maus über das "X" fährt */
     font-weight: bold;
     color: red; /* Du kannst die Farbe anpassen */
-    font-size: 18px; /* Du kannst die Größe anpassen */
+    font-size: 1rem; /* Du kannst die Größe anpassen */
     background: none; /* Keine Hintergrundfarbe */
     border: none; /* Kein Rand */
     padding: 5px; /* Platz um das "X" herum */
@@ -448,4 +441,18 @@ hr{
 
 .cardsLoad button, .level button{
     margin: 0.5rem;
+}
+
+
+.cardList{
+    background-color: rgba(255, 0, 0, 0.486);
+    
+}
+
+.cardList2{
+    background-color: rgb(190, 181, 48);
+}
+
+.cardList3{
+    background-color: rgb(54, 212, 39);
 }
