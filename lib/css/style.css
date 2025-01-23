@@ -279,10 +279,33 @@ button {
 }
 
 .cardList {
+    border-radius: 2rem;
+    width: 100%;
     text-align: center;
     align-items: center;
     border: rgba(255, 255, 255, 0.322) solid 0.3rem;
+    display: flex;
+    justify-content: space-between; /* Elemente auf beiden Seiten verteilen */
+    padding: 0.5rem; /* Optional: etwas Platz innerhalb der Zeile */
 }
+.cardList li{
+    flex: 1;
+}
+
+.cButton {
+    
+        cursor: pointer; /* Mauszeiger ändert sich, wenn man mit der Maus über das "X" fährt */
+        font-weight: bold;
+        color: red; /* Du kannst die Farbe anpassen */
+        font-size: 1rem; /* Du kannst die Größe anpassen */
+        background: none; /* Keine Hintergrundfarbe */
+        border: none; /* Kein Rand */
+        padding: 5px; /* Platz um das "X" herum */
+        
+    
+    margin-left: auto; /* Schiebt den Button nach rechts */
+}
+
 
 @media (max-width: 35rem){
     body{
@@ -472,16 +495,7 @@ hr{
     padding-right: 30px; /* Gibt Platz für das "X"-Element auf der rechten Seite */
 }
 
-.cButton {
-    cursor: pointer; /* Mauszeiger ändert sich, wenn man mit der Maus über das "X" fährt */
-    font-weight: bold;
-    color: red; /* Du kannst die Farbe anpassen */
-    font-size: 1rem; /* Du kannst die Größe anpassen */
-    background: none; /* Keine Hintergrundfarbe */
-    border: none; /* Kein Rand */
-    padding: 5px; /* Platz um das "X" herum */
-    justify-self: end;
-}
+
 
 .lsKeyF, .lsKeyA, .tLeft, .cardVerzeichnis{
     display: block;
