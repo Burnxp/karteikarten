@@ -74,6 +74,7 @@ a{
 body{
     background-color: antiquewhite;
     background-image: var(--bg-color);
+    background-attachment: fixed; /* Fixiert das Hintergrundbild */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -202,12 +203,12 @@ button {
     margin: 0.5rem;
     background-image: var(--button-img);
 }
-.deleteKey, .savedCards{
+.deleteKey, .savedCards, .cardCollection{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.2rem;
+    gap: 0.5rem;
 }
 .deleteKey button{
     
@@ -224,6 +225,50 @@ button {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+
+/* **Layout für Kartenverzeichnis!** */
+/* Standardlayout: Container nebeneinander */
+#cardList {
+    display: flex;
+    flex-direction: row; /* Container nebeneinander */
+    gap: 0.4rem;         /* Abstand zwischen den Containern */
+    flex-wrap: wrap;     /* Umbruch, wenn Platz nicht ausreicht */
+    justify-content: space-around; /* Gleichmäßige Verteilung */
+}
+
+#cardList h3{
+    font-family: 'Great Vibes';
+    font-size: 2rem;
+    margin: 0;
+}
+
+.cardContainerF1, .cardContainerF2, .cardContainerF3 {
+    display: flex;
+    flex-direction: column; /* Inhalte im Container untereinander */
+    width: 30%;             /* Standardbreite der Container */
+    background-color: #8d1a256c;
+    padding: 0.2rem;        /* Innenabstand */
+    align-items: center;    /* Zentrierung der Inhalte */
+    height: auto;           /* Passt sich an den Inhalt an */
+}
+
+.cardContainerF1 {
+    background-color: #8d1a256c;
+}
+
+.cardContainerF2 {
+    background-color: #9756006c;
+}
+
+.cardContainerF3 {
+    background-color: #358d1a6c;
+}
+
+.cardList {
+    text-align: center;
+    align-items: center;
+    border: rgba(255, 255, 255, 0.322) solid 0.3rem;
 }
 
 @media (max-width: 35rem){
@@ -270,17 +315,26 @@ button {
     footer{
         padding: 1rem;
     }
+    #cardList {
+        flex-direction: column; /* Container untereinander */
+        width: 80%;
+        gap: 0;
+    }
+
+    .cardContainerF1, 
+    .cardContainerF2, 
+    .cardContainerF3 {
+        display: flex;
+        justify-content: center;
+        margin: 0.3rem auto;
+        width: 100%;            /* Container nehmen gesamte Breite ein */
+        align-items: center;
+        border-radius: 2rem;
+    }
+    
 }
 
-#cardList  li {
-    width: 70vw;
-    font-size: 1rem;
-    margin: 0.01 auto;
-    padding: 0.1rem;
-    display: inline-block;
-    flex-wrap: wrap;
-    border-radius: 0.3rem;
-}
+
 
 
 .lsKey, .lsKeyA, .lsKeyF {
@@ -352,9 +406,6 @@ input[type="checkbox"] {
     border-color: #4c8e38; /* Randfarbe bei aktiviertem Zustand */
 }
 
-
-
-
 /* masseage falls keine Karten geladen sind */
 .message {
     background-color: #f8d7da;
@@ -389,8 +440,6 @@ hr{
     width: 100%;
 }
 
-
-
 .closeButton {
     cursor: pointer;
     color: red;
@@ -405,7 +454,6 @@ hr{
 .closeButton:hover {
     color: darkred;
 }
-
 
 .coffee{
     display: flex;
@@ -441,18 +489,11 @@ hr{
 
 .cardsLoad button, .level button{
     margin: 0.5rem;
-}
-
-
-.cardList{
-    background-color: rgba(255, 0, 0, 0.486);
     
 }
-
-.cardList2{
-    background-color: rgb(190, 181, 48);
-}
-
-.cardList3{
-    background-color: rgb(54, 212, 39);
+.cardsLoad, .level{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;    
 }
