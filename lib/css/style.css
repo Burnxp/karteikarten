@@ -46,6 +46,7 @@ a{
 
 .cardVerzeichnis{
     background-image: var(--card-img-js);
+    background-attachment: fixed; /* Fixiert das Hintergrundbild */
 }
 
 
@@ -163,10 +164,21 @@ li.addCards:hover, li.help:hover, li.myCards:hover, .navi+li:hover, button {
     cursor: pointer;
     background-color:#ecf2f585;
 }
-
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 li.addCards:active, li.help:active, li.myCards:active, .navi+li:active {
     background-color: #007BFF; /* Beispiel: Blau für Klick */
     color: white; /* Optional: Textfarbe ändern */
+    
 }
 .navi li{
     border-radius: 1rem;
@@ -251,6 +263,7 @@ button {
     padding: 0.2rem;        /* Innenabstand */
     align-items: center;    /* Zentrierung der Inhalte */
     height: auto;           /* Passt sich an den Inhalt an */
+    border-radius: 2rem;
 }
 
 .cardContainerF1 {
@@ -329,7 +342,7 @@ button {
         margin: 0.3rem auto;
         width: 100%;            /* Container nehmen gesamte Breite ein */
         align-items: center;
-        border-radius: 2rem;
+        
     }
     
 }
@@ -423,17 +436,7 @@ input[type="checkbox"] {
     animation: fadeInOut 5s forwards; /* Einfading + Ausblenden nach 3 Sekunden */
 }
 
-@keyframes fadeInOut {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
+
 
 
 hr{
@@ -488,7 +491,7 @@ hr{
 }
 
 .cardsLoad button, .level button{
-    margin: 0.5rem;
+    margin: 1rem;
     
 }
 .cardsLoad, .level{
