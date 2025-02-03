@@ -15,16 +15,20 @@
 
 /* Modal-Inhalt */
 .modal-content {
-    background: rgba(184, 20, 20, 0.897);
-    padding: 20px;
-    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    background: rgb(209, 43, 43);
+    width: 98%;
+    padding: 1rem;
+    border-radius: 0.7rem;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
 }
 
 /* Modal-Inhalt */
 .modal-info-content {
-    background: var(--bg-color);
+    background-color: rgb(45, 216, 45);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -40,19 +44,19 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
+    margin: 0.5rem;
 }
 
 /* "Ja"-Button */
 #confirmYes {
     background-image: var(--card-img-badCards);
-    
     color: rgb(253, 3, 3);
 }
 
 /* "Nein"-Button */
 #confirmNo {
-    
+
     color: rgb(255, 255, 255);
 }
 

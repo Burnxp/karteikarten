@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="lib/css/style.css"/>
     <link rel="stylesheet" href="lib/css/okWindow.css"/>
     <link rel="manifest" href="manifest.json">
-
+    <link rel="icon" href="/images/icons/icon-72x72.png" type="image/x-icon">
     <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
@@ -21,22 +21,22 @@
       <ul class="navi">
         <li class="myCards"><a href="index.html">My Cards</a></li>
         <li class="addCards"><a href="#">Add Cards</a></li>
-        <li class="help"><a href="help.html">Help</a></li>
+        <!-- <li class="help"><a href="help.html">Help</a></li> -->
       </ul>
     </nav>
     </header>
     <h1 class="ueb">Add Cards</h1> 
     
-    <div class="addCard">
+    
       <div class="cardCollection">
-        <h2 class="inhalt">Lade hier Karteikarten von der Bibliotek in dein Localstorage!</h2>
+        <p class="inhalt">Lade Karteikarten von der Bibliotek in dein Localstorage!</p>
         <p class="cardLoad">
 
 <!--           <button class="htmlCards" onclick="htmlCardsLoad()">HTML-Karten</button>
           <button class="cssCards" onclick="cssCardsLoad()">CSS-Karten</button>
           <button class="JavaScript" onclick="jsCardsLoad()">JavaScript</button> -->
           <button class="engGer" onclick="engGerCardsLoad()">Englisch / Deutsch</button>
-          <button class="engGer" onclick="spaGerCardsLoad()">Spanisch / Deutsch</button>
+          <button class="spaGer" onclick="spaGerCardsLoad()">Spanisch / Deutsch</button>
           <button class="frGer" onclick="frGerCardsLoad()">Französisch / Deutsch</button>
           
 
@@ -47,7 +47,7 @@
         
       </div>
       <div class="selfCards">
-        <div><p class="sans">Hier kannst du eigene Karten erstellen:<div class="inhalt1">&#8505;</div></p>
+        <div><span class="inhalt1">&#8505;</span><p class="sans">Hier kannst du eigene Karten erstellen:</p>
           <label for="localKey" class="lsKey">Speicher Bereich </label>
           <input type="text" id="localKey"><br>
         <label for="frage" class="lsKeyF">Frage:</label>
@@ -64,7 +64,8 @@
     </div>
     <div class="cardVerzeichnis">
     <div class="savedCard">
-      <p class="inhalt2">Gespeicherten Kartensammlunge: &#8505;</p>
+      <span class="inhalt2"> &#8505;</span>
+      <p >Gespeicherten Kartensammlungen: </p>
       <h4 class="tLeft">Kartenverzeichis:</h4>
     <p class="savedCards"></p>
     

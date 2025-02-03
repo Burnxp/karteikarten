@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box; 
-    --bg-color: linear-gradient(to top, rgb(98, 223, 40), rgb(173, 216, 230)); /* Frisches Grün + LightBlue */ /* LightBlue + Gainsboro */;
-    --button-img: linear-gradient(white, rgb(98, 223, 40));
+    --bg-color: #bcffab; /* Frisches Grün + LightBlue */ /* LightBlue + Gainsboro */;
+    --button-img: linear-gradient(rgba(178, 221, 245, 0.842), rgb(129, 218, 245));
     --card-img: linear-gradient(white, rgb(245, 235, 220));
 
     --card-img-css: linear-gradient(white, rgb(173, 216, 230)); /* LightBlue */;
@@ -9,7 +9,7 @@
     --card-img-allCards: linear-gradient(to right, #ff7e5f, #feb47b); /* Orange und Pink */
 
     --card-img-html:linear-gradient(white, rgb(220, 220, 220)); /* Gainsboro */;
-    --card-img-badCards: linear-gradient(white, rgb(255, 182, 193)); /* LightPink */;
+    --card-img-badCards: linear-gradient(rgb(252, 161, 161), rgb(255, 182, 193)); /* LightPink */;
 
     --empty-fach: linear-gradient(white, gray);
     
@@ -20,6 +20,8 @@
     background-image: var(--empty-fach);
 }
 
+
+
 a{
     text-decoration: none;
 }
@@ -27,7 +29,7 @@ a{
 .selfCards, .cardVerzeichnis, .cardCollection, .keyDelete{
     margin: 0 auto;
     border-radius: .4rem;
-    width: 80vw;
+    width: 95vw;
     padding: 0.5rem;
     background-color: #ecf2f585;
     font-family: 'Great Vibes';
@@ -45,7 +47,7 @@ a{
 }
 
 .cardVerzeichnis{
-    background-image: var(--card-img-js);
+    background-color: rgba(255, 239, 186, 0.945);
     background-attachment: fixed; /* Fixiert das Hintergrundbild */
 }
 
@@ -74,7 +76,7 @@ a{
 
 body{
     background-color: antiquewhite;
-    background-image: var(--bg-color);
+    background-color: var(--bg-color);
     background-attachment: fixed; /* Fixiert das Hintergrundbild */
     display: flex;
     flex-direction: column;
@@ -126,6 +128,7 @@ h1.ueb {
     width: 80vw;
 }
 .inhalt{
+    font-size: 1.8rem;
     padding: 0.3rem;
 }
 .info{
@@ -139,19 +142,35 @@ h1.ueb {
 
 }
 
+.inhalt1, .inhalt2 {
+    font-size: 1.5rem;
+    border: #8d1a26 solid 0.2rem;
+    border-radius: 50%; /* Macht den Rand rund */
+    width: 2rem; /* Gleiche Breite */
+    height: 2rem; /* Gleiche Höhe */
+    display: flex; /* Optionale Zentrierung des Inhalts */
+    justify-content: center; /* Zentrierung horizontal */
+    align-items: center; /* Zentrierung vertikal */
+}
+
+
 .navi{
+    background-color: #a6a0f749;
     display: flex;
-    padding: 0;
-    margin: 0;
+    justify-content: space-around; /* Verteilt die Items gleichmäßig */
+    width: 100%;
+    padding: 0.5rem;
     margin: 0 auto; 
     /* background-color: rgba(95, 178, 255, 0.377);  */
 }
-.help, .myCards, .addCard{
-    display: flex;
+.help .myCards .addCard{
+    flex: 1; /* Items teilen sich gleichmäßig den Platz auf */
     text-align: center;
     align-items: center;
+    
 }
 li a{
+    
     color: #0d00c2;
     list-style: none;
     font-family: sans-serif;
@@ -177,11 +196,12 @@ li.addCards:hover, li.help:hover, li.myCards:hover, .navi+li:hover, button {
 }
 li.addCards:active, li.help:active, li.myCards:active, .navi+li:active {
     background-color: #007BFF; /* Beispiel: Blau für Klick */
-    color: white; /* Optional: Textfarbe ändern */
+    color: rgba(255, 255, 255, 0.521); /* Optional: Textfarbe ändern */
     
 }
 .navi li{
-    border-radius: 1rem;
+    border-radius: .2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) .2rem .1rem .3rem .3rem;
 }
 
 
@@ -212,25 +232,26 @@ textarea, input{
 button {
     width: 30vw; 
     height: 5vh;
-    margin: 0.5rem;
-    background-image: var(--button-img);
+    margin: 0.1rem auto;
+    background: linear-gradient(to top, rgb(98, 223, 40), rgba(116, 228, 144, 0.664));
+    transition: all 0.3s ease;
+    border: 1px solid greenyellow;
+    border-radius: .5rem;
+    
 }
-.deleteKey, .savedCards, .cardCollection{
+.deleteKey, .savedCards{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
-.deleteKey button{
-    
-    color: red;
-}
+
 
 #spanBadCard{
     background-image: var(--card-img-badCards);
     width: 10rem;
-    border: .1rem, solid black;
+    
     
     text-align: center;
     display: flex;
@@ -266,6 +287,7 @@ button {
     border-radius: 2rem;
 }
 
+
 .cardContainerF1 {
     background-color: #8d1a256c;
 }
@@ -277,7 +299,10 @@ button {
 .cardContainerF3 {
     background-color: #358d1a6c;
 }
-
+.cardCollection{
+    display: flex;
+    flex: wrap;
+}
 .cardList {
     border-radius: 2rem;
     width: 100%;
@@ -313,6 +338,14 @@ button {
         margin: 0;
         padding: 0;
         
+    }
+
+    .navi{
+        display: block; /* Flexbox aktivieren */
+    }
+    .navi li {
+        width: 90%;
+        align-items: center;
     }
     main{
         padding: 1rem;
@@ -379,7 +412,7 @@ button {
     font-size: 1.5rem;
 }
 .keyDelete{
-    background-image: var(--card-img-badCards);
+    background-color: rgb(255, 182, 193);
 }
 
 .front{
@@ -391,13 +424,7 @@ button {
     
 }
 
-.back{
-    font-size: 2rem;
-    transition: all 2s linear 0.1s ;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
-    
-}
+
 
 
 .card:hover{
